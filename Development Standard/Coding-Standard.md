@@ -1,4 +1,4 @@
-# Java Coding Standards
+# Project Coding Standards
 ---
 ### *Naming Standards*
 **1. Must using Lower Camel Case naming Style**
@@ -154,8 +154,8 @@ Example:
 ```xml
 strings.xml (values resouces):
     <resources>
-        <string name="app_name">School Management System</string>
-        <string name="welcome_str">Welcome to the school management system!</string>
+        <string name="app_name">Hotel Booking</string>
+        <string name="welcome_str">Welcome to the Hotel Booking system!</string>
     </resources>
 
 Login.xml (Layout resouce):
