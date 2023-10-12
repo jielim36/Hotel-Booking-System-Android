@@ -1,5 +1,27 @@
-# Project Coding Standards
+# Java Coding Standards
 ---
+
+<details>
+<summary>Table of Contents</summary>
+
+1. [Naming Standards](#naming-standards)
+   1. [Lower Camel Case Naming Style](#lower-camel-case-naming-style)
+   2. [Constant Variables](#constant-variables)
+2. [Coding Style Standards](#coding-style-standards)
+3. [File Structure](#file-structure)
+4. [Android Java Class and Resource Files Naming](#android-java-class-and-resource-files-naming)
+   1. [Layout File Naming](#layout-file-naming)
+   2. [Drawable and Anim Resources](#drawable-and-anim-resources)
+   3. [Color Resources](#color-resources)
+   4. [View Resources' ID](#view-resources-id)
+5. [Application Styles Standards](#application-styles-standards)
+   1. [Size Units](#size-units)
+   2. [Theme and Values Resources](#theme-and-values-resources)
+6. [Android Project Version](#android-project-version)
+
+</details>
+
+
 ### *Naming Standards*
 **1. Must using Lower Camel Case naming Style**
 > Lower camel case: capitalizing the first letter of each word except the first, which remains lowercase.
@@ -17,6 +39,7 @@
 ```
 
 **2. To name constant variables, use all uppercase letters with underscores to separate words**
+
 *Example:*
 ```java
     final int PAGE_NUMBER = 8;
@@ -41,6 +64,7 @@ content...
 
 ### *Android Java Class and Resource Files Naming*
 **1. Layout File Naming: Combine the page functionality with the layout type, separated by an underscore.**
+
 Example:
 ```
 Login function and Activity layout type: 
@@ -58,7 +82,9 @@ Other:
 ```
 
 **2. Drawable and anim resources should be named in lowercase with underscores**
+
 drawable resources following the pattern: `assetType_functionDescription_controlState_qualifier.`
+
 Example:
 ```
 1. login button image when normal state naming:
@@ -85,8 +111,7 @@ slide_out_right.xml
 scale_up.xml
 ```
 
-**3. Color resources must using #AARRGGBB format**
-`#FFAA0000 , #7700FF22`
+**3. Color resources must using #AARRGGBB format:** `#FFAA0000 , #7700FF22`
 
 **4. View resources' id must include the shortname of view type**
 | Component Name       | Abbreviation | Example         |
@@ -150,12 +175,13 @@ scale_up.xml
 |   Text left alignment baseline            | 72dp      |
 
 2. Must follow the theme of under values reouces package:
+
 Example:
 ```xml
 strings.xml (values resouces):
     <resources>
-        <string name="app_name">Hotel Booking</string>
-        <string name="welcome_str">Welcome to the Hotel Booking system!</string>
+        <string name="app_name">School Management System</string>
+        <string name="welcome_str">Welcome to the school management system!</string>
     </resources>
 
 Login.xml (Layout resouce):
@@ -179,4 +205,4 @@ Login.xml (Layout resouce):
 <br>
 
 ### *Android project version*
-1. Android Studio Minimum SDK: **API 24("Nougat";Android 7.0)**
+1. Android Studio Minimum SDK: **API 24 ("Nougat";Android 7.0)**
