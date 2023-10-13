@@ -3,6 +3,7 @@
     <style name="Base.Theme.HotelBookingSystemsAndroid" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<<<<<<< HEAD
         <item name="android:windowBackground">@color/app_background</item><!--Set whole application background default color-->
         <item name="colorPrimary">@color/app_primary_color</item><!--application primary default color-->
         <item name="android:textSize">16sp</item>
@@ -12,6 +13,8 @@
     </style>
     <style name="big_text">
         <item name="android:textSize">18sp</item>
+=======
+>>>>>>> 49f2eeb4a486d70a409990029cbef69567bee00a
     </style>
 
     <style name="Theme.HotelBookingSystemsAndroid" parent="Base.Theme.HotelBookingSystemsAndroid" />
