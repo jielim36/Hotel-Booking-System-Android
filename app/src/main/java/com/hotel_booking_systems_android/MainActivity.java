@@ -2,7 +2,6 @@ package com.hotel_booking_systems_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,17 +21,10 @@ public class MainActivity extends AppCompatActivity {
     private Intent loginIntent;
     private SharedPreferences sp;
 
-=======
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
-
->>>>>>> 49f2eeb4a486d70a409990029cbef69567bee00a
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         initializeMember();
         initializeEvent();
 
@@ -83,7 +75,4 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
-=======
-    }
->>>>>>> 49f2eeb4a486d70a409990029cbef69567bee00a
 }

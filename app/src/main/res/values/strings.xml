@@ -1,11 +1,7 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">New Era Hotel</string>
     <string name="welcome">Welcome to the New Era Hotel App!</string>
     <string name="register_notice">No account? Register now!</string>
     <string name="user_login_btn">User Login</string>
     <string name="staff_login_btn">Staff Login</string>
-=======
-    <string name="app_name">Hotel-Booking-Systems-Android</string>
->>>>>>> 49f2eeb4a486d70a409990029cbef69567bee00a
 </resources>
