@@ -70,16 +70,16 @@ Example:
 ```
 Login function and Activity layout type: 
     java class naming: LoginActivity.java
-    resouce file naming: login_activity.xml
+    resouce file naming: activity_activity.xml
 
 Other:
-    Activity layouts should start with "module_activity".
-    Fragment layouts should start with "module_fragment".
-    Dialog layouts should start with "module_dialog".
-    Include layouts should start with "module_include".
-    ListView row layouts should start with "module_list_item".
-    RecyclerView item layouts should start with "module_recycle_item".
-    GridView row layouts should start with "module_grid_item".
+    Activity layouts should start with "activity_module".
+    Fragment layouts should start with "fragment_module".
+    Dialog layouts should start with "dialog_module".
+    Include layouts should start with "include_module".
+    ListView row layouts should start with "list_item_module".
+    RecyclerView item layouts should start with "recycle_item_module".
+    GridView row layouts should start with "grid_item_module".
 ```
 
 **2. Drawable and anim resources should be named in lowercase with underscores**
