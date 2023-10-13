@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Intent homeActivity;
     private TextView backHome_tv;
+    private Intent loginActivity;
     private EditText username_et;
     private EditText password_et;
     private EditText ic_et;
@@ -39,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void initializeViewAndActivity(){
         dbEngine = new DBEngine(RegisterActivity.this);
         homeActivity = new Intent(RegisterActivity.this , MainActivity.class);
+        loginActivity = new Intent(RegisterActivity.this , LoginActivity.class);
         backHome_tv = findViewById(R.id.back_home_tv);
         register_btn = findViewById(R.id.register_btn);
 
@@ -76,7 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         User user = new User(username,password,ic,Long.parseLong(phone),new byte[0]);
         dbEngine.insertUsers(user);
-        Log.e("DBEngine","User register successfully:" + user);
+        Toast.makeText(RegisterActivity.this,"Register successful!" , Toast.LENGTH_SHORT).show();
+        startActivity(loginActivity);
     }
 
     public boolean registerVerify(String username, String password , String ic , String phone){
@@ -107,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         //ic verify
-        String icRegex = "\\d{2}(0[1-9]|1[0-2])(0[1-9]|1\\d|2\\d|3[0-1])-\\d[2]-\\d{4}";//ic format
+        String icRegex = "\\d{2}(0[1-9]|1[0-2])(0[1-9]|1\\d|2\\d|3[0-1])-\\d{2}-\\d{4}";//ic format
         if (ic.isEmpty()){
             Toast.makeText(this, "IC can't be empty!", Toast.LENGTH_SHORT).show();
             return false;

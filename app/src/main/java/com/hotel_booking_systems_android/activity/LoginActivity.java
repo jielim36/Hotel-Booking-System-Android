@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,7 +19,6 @@ import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.room.User.User;
 import com.hotel_booking_systems_android.room.manager.DBEngine;
 
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -150,16 +148,11 @@ public class LoginActivity extends AppCompatActivity {
         if (rememberMe_cb.isChecked()){
             editor.putString("username",user.getUsername());
             editor.putString("password",user.getPassword());
-            editor.putBoolean("rememberMe",true);
-            editor.apply();
-        }else {
-            editor.putBoolean("rememberMe",false);
-            editor.apply();
         }
-        if (autoLogin_cb.isChecked()){
-            editor.putBoolean("autoLogin",true);
-            editor.apply();
-        }
+        //update checkbox state for next time login
+        editor.putBoolean("rememberMe",rememberMe_cb.isChecked());
+        editor.putBoolean("autoLogin",autoLogin_cb.isChecked());
+
 
         editor.putBoolean("isLogin",true);//save the login state
         editor.apply();
