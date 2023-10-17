@@ -1,91 +1,76 @@
 package com.hotel_booking_systems_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hotel_booking_systems_android.activity.LoginActivity;
+import com.hotel_booking_systems_android.databinding.ActivityMainBinding;
+import com.hotel_booking_systems_android.fragments.HomeFragment;
+import com.hotel_booking_systems_android.fragments.ProfileFragment;
+import com.hotel_booking_systems_android.room.Room.Room;
+import com.hotel_booking_systems_android.room.manager.RoomDBEngine;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginAndLogout_btn;//include logout function
-    private TextView username_tv;
-    private Intent loginIntent;
-    private SharedPreferences sp;
+    ActivityMainBinding binding;
+    SharedPreferences sp;
+    private RoomDBEngine roomDBEngine;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initializeMember();
-        initializeEvent();
-        initializeLoginState();
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        initialize();
+        initializeDatabase();
 
     }
 
-    public void initializeLoginState(){
+    public void initialize(){
+        //default page
+        replaceFragment(new HomeFragment());
 
-        if (sp.getBoolean("autoLogin",false)){
-            Toast.makeText(MainActivity.this,"Auto Login!",Toast.LENGTH_SHORT).show();
-            //set username
-            String username = sp.getString("username", "-");
-            username_tv.setText(username);
-            SharedPreferences.Editor edit = sp.edit();
-            edit.putBoolean("isLogin",true);
-            edit.apply();
-        }
-        //login_btn content and function is depending by isLogin boolean value
-        Log.e("login","isLogin:" + sp.getBoolean("isLogin",false));
-        if (sp.getBoolean("isLogin",false)){
-            loginAndLogout_btn.setText("Logout");
-            String username = sp.getString("username", "-");
-            username_tv.setText(username);
-        }else {
-            loginAndLogout_btn.setText("Login");
-        }
-
-    }
-
-    public void initializeMember(){
-        loginAndLogout_btn = findViewById(R.id.loginAndLogout_btn);
-        loginIntent = new Intent(MainActivity.this , LoginActivity.class);
-        username_tv = findViewById(R.id.username_tv);
+        //member initialize
         sp = getSharedPreferences("account", Context.MODE_PRIVATE);
 
-    }
+        //event initialize
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
 
-    public void initializeEvent(){
-        loginAndLogout_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (sp.getBoolean("isLogin",false)){
-                    logoutProcess();
-                }else {
-                    startActivity(loginIntent);
-                }
+            if (itemId == R.id.nav_home){
+                replaceFragment(new HomeFragment());
+            } else if (itemId == R.id.nav_profile) {
+                replaceFragment(new ProfileFragment());
+            }else if(itemId == R.id.nav_settings){
+                //code...
             }
+
+            return true;
         });
 
 
+        //alert message
+        if (sp.getBoolean("autoLogin",false)) {
+            Toast.makeText(MainActivity.this, "Auto Login!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void logoutProcess(){
-        Toast.makeText(MainActivity.this,"Logout!",Toast.LENGTH_SHORT).show();
+    public void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout , fragment);
+        fragmentTransaction.commit();
 
-        username_tv.setText("-");
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean("isLogin",false);
-        editor.putBoolean("autoLogin",false);
-        editor.apply();
-        initializeLoginState();//reload login state
     }
 
     @Override
@@ -95,4 +80,36 @@ public class MainActivity extends AppCompatActivity {
         edit.putBoolean("isLogin",false);
         edit.apply();
     }
+
+    public void initializeDatabase(){
+        roomDBEngine = new RoomDBEngine(MainActivity.this);
+
+        Room getFirstRoom = roomDBEngine.getRoomByFloorAndRoomNumber(1, 1);
+        if (getFirstRoom == null){
+            //room data
+            Room room1 = new Room( 1, "1", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+            Room room2 = new Room( 1, "2", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+            Room room3 = new Room(1, "3", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+            Room room4 = new Room(1, "4", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+
+            Room room5 = new Room( 2, "1", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+            Room room6 = new Room( 2, "2", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+            Room room7 = new Room(2, "3", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+            Room room8 = new Room(2, "4", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+
+            Room room9 = new Room( 3, "1", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+            Room room10 = new Room( 3, "2", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+            Room room11 = new Room(3, "3", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+            Room room12 = new Room(3, "4", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+
+            Room room13 = new Room( 4, "1", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+            Room room14 = new Room( 4, "2", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+            Room room15 = new Room(4, "3", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+            Room room16 = new Room(4, "4", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+
+            roomDBEngine.insertRooms(room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12,room13,room14,room15,room16);
+        }
+
+    }
+
 }

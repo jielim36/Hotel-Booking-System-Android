@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.room.User.User;
-import com.hotel_booking_systems_android.room.manager.DBEngine;
+import com.hotel_booking_systems_android.room.manager.UserDBEngine;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button staffLogin_btn;
     private CheckBox rememberMe_cb;
     private CheckBox autoLogin_cb;
-    private DBEngine dbEngine;
+    private UserDBEngine userDBEngine;
     SharedPreferences sp;
 
     @Override
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void initializeMember(){
-        dbEngine = new DBEngine(LoginActivity.this);
+        userDBEngine = new UserDBEngine(LoginActivity.this);
         sp = getSharedPreferences("account", Context.MODE_PRIVATE);
         home_tv = findViewById(R.id.back_home_tv);
         register_tv = findViewById(R.id.register_tv);
@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
         String username = username_et.getText().toString();
         String password = password_et.getText().toString();
 
-        User user = dbEngine.getUser(username,password);
+        User user = userDBEngine.getUser(username,password);
         if (user == null){
             Toast.makeText(LoginActivity.this , "Username or password is incorrect...",Toast.LENGTH_SHORT).show();
             return;

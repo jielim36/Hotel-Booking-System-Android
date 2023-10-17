@@ -13,6 +13,12 @@
     <style name="big_text">
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="CustomBottomNavIndicatorStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">4dp</item> <!-- 指示器高度 -->
+        <item name="android:layout_width">match_parent</item> <!-- 指示器宽度，与选项卡宽度相同 -->
+    </style>
+
 
     <style name="Theme.HotelBookingSystemsAndroid" parent="Base.Theme.HotelBookingSystemsAndroid" />
 </resources>

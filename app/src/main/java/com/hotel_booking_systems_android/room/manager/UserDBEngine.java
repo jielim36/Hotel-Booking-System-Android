@@ -10,11 +10,11 @@ import com.hotel_booking_systems_android.room.User.UserDatabase;
 
 import java.util.List;
 
-public class DBEngine {
+public class UserDBEngine {
 
     private UserDao userDao;
 
-    public DBEngine(Context context){
+    public UserDBEngine(Context context){
         UserDatabase userDatabase = UserDatabase.getInstance(context);
         userDao = userDatabase.getUserDao();
     }

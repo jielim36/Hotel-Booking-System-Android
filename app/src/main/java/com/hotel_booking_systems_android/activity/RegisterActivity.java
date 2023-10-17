@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.room.User.User;
-import com.hotel_booking_systems_android.room.manager.DBEngine;
+import com.hotel_booking_systems_android.room.manager.UserDBEngine;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText ic_et;
     private EditText phone_et;
     private Button register_btn;
-    private DBEngine dbEngine;
+    private UserDBEngine userDBEngine;
 
 
     @Override
@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void initializeViewAndActivity(){
-        dbEngine = new DBEngine(RegisterActivity.this);
+        userDBEngine = new UserDBEngine(RegisterActivity.this);
         homeActivity = new Intent(RegisterActivity.this , MainActivity.class);
         loginActivity = new Intent(RegisterActivity.this , LoginActivity.class);
         backHome_tv = findViewById(R.id.back_home_tv);
@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         User user = new User(username,password,ic,Long.parseLong(phone),new byte[0]);
-        dbEngine.insertUsers(user);
+        userDBEngine.insertUsers(user);
         Toast.makeText(RegisterActivity.this,"Register successful!" , Toast.LENGTH_SHORT).show();
         startActivity(loginActivity);
     }

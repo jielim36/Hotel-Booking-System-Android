@@ -6,6 +6,6 @@
     <color name="app_primary_color">#11cea5</color><!--use for main color of this application such as button-->
     <color name="sky_blue">#97e9eb</color>
     <color name="app_background">#f0f0f0</color><!--use for whole application's background color-->
-    <color name="gray_text">#8c8c8c</color><!--use for some notice content such as "No account? Register Now!"-->
-
+    <color name="gray">#8c8c8c</color><!--use for some notice content such as "No account? Register Now!"-->
+    <color name="dark">#262626</color>
 </resources>

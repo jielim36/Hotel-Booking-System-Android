@@ -25,15 +25,23 @@ android {
             )
         }
     }
+
+    buildFeatures{
+        viewBinding=true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildToolsVersion = "33.0.1"
 }
+
+val room_version = "2.5.2"
+val navigation_version = "2.7.4"
 
 dependencies {
 
-    val room_version = "2.5.2"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
@@ -42,7 +50,13 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    // room: for database
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
+    implementation("androidx.navigation:navigation-fragment:$navigation_version")
+    implementation("androidx.navigation:navigation-ui:$navigation_version")
+
+    //circular image:github:https://github.com/hdodenhof/CircleImageView
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
