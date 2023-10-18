@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Java Coding Standards
 ---
 
@@ -416,4 +415,3 @@ Login.xml (Layout resouce):
 
 ### *Android project version*
 1. Android Studio Minimum SDK: **API 24 ("Nougat";Android 7.0)**
->>>>>>> 49f2eeb4a486d70a409990029cbef69567bee00a
