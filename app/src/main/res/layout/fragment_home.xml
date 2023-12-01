@@ -78,6 +78,19 @@
                 style="@style/big_text"
                 />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/home_startBooking_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Booking"
+            />
+        <Button
+            android:id="@+id/home_about_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            />
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

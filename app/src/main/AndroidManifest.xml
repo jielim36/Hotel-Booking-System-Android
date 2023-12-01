@@ -13,6 +13,24 @@
         android:theme="@style/Theme.HotelBookingSystemsAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ActivitySuitRoom"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityFamilyRoom"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDoubleRoom"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivitySingleRoom"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityRoom"
+            android:exported="false" />
+        <activity
+            android:name=".activity.BookingRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />
         <activity

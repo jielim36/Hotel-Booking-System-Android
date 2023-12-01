@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BookingRoomActivity">
+
+    <!-- Toolbar with Up Arrow -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/app_primary_color" />
+
+
+    <!-- Check-In Date Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/checkInDateInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/checkInDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Check-In Date"
+            android:inputType="none"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Check-Out Date Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/checkOutDateInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkInDateInput">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/checkOutDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Check-Out Date"
+            android:inputType="none"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkOutDate"
+            android:onClick="room"
+            android:text="Search"
+            android:backgroundTint="@color/app_primary_color" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

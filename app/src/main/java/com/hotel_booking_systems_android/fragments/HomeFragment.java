@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.activity.BookingRoomActivity;
 import com.hotel_booking_systems_android.activity.LoginActivity;
 import com.hotel_booking_systems_android.room.Room.Room;
 
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment {
     private Intent loginIntent;
     private SharedPreferences sp;
     private View view;
+    private Button startBooking_btn;
+    private Button about_btn;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -113,7 +116,8 @@ public class HomeFragment extends Fragment {
         loginIntent = new Intent(getActivity() , LoginActivity.class);
         username_tv = view.findViewById(R.id.username_tv);
         sp = getActivity().getSharedPreferences("account", Context.MODE_PRIVATE);
-
+        startBooking_btn = view.findViewById(R.id.home_startBooking_btn);
+        about_btn = view.findViewById(R.id.home_about_btn);
     }
 
     public void initializeEvent(){
@@ -128,6 +132,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        startBooking_btn.setOnClickListener(v ->{
+            if (sp.getBoolean("isLogin",false)){
+                Intent startBookingPage = new Intent(getActivity(), BookingRoomActivity.class);
+                startActivity(startBookingPage);
+            }else {
+                startActivity(loginIntent);
+            }
+        });
 
     }
 

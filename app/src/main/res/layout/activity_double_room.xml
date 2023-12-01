@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/app_primary_color">
+
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Double Room"
+        android:layout_below="@+id/toolbar"/>
+    <Button
+        android:id="@+id/singleRoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="401 Room"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/app_primary_color"/>
+
+    <Button
+        android:id="@+id/doubleRoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="402 Room"
+        android:layout_below="@+id/singleRoomButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/app_primary_color"/>
+
+    <Button
+        android:id="@+id/familyRoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="403 Room"
+        android:layout_below="@+id/doubleRoomButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/app_primary_color"/>
+
+    <Button
+        android:id="@+id/suiteRoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="404 Room"
+        android:layout_below="@+id/familyRoomButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/app_primary_color"/>
+    <Button
+        android:id="@+id/RoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="405 Room"
+        android:layout_below="@+id/suiteRoomButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/app_primary_color"/>
+</RelativeLayout>
