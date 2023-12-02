@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TenantMainPage_Part.FoodDetailsActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/app_primary_color"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        >
+        <ImageButton
+            android:id="@+id/food_details_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:backgroundTint="@color/white"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/btn_shape"
+        />
+
+    <TextView
+        android:id="@+id/food_details_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/food_details_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Price"
+        android:textSize="18sp"
+        android:paddingLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/food_details_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Stock"
+        android:textSize="18sp"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <TextView
+        android:id="@+id/food_details_description"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Food Description"
+        android:paddingLeft="20dp"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity:"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/food_details_quantity"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="24sp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            >
+
+            <ImageButton
+                android:id="@+id/food_details_increase_quantity_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_arrow_drop_up_24"
+                />
+
+            <ImageButton
+                android:id="@+id/food_details_decrease_quantity_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_arrow_drop_down_24"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/food_details_order_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:layout_marginRight="20dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingVertical="5dp"
+    >
+
+    <TextView
+        android:id="@+id/list_item_id"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:text="No"
+        />
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="|"
+        />
+    <TextView
+        android:id="@+id/list_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Item Name"
+        />
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="|"
+        />
+    <TextView
+        android:id="@+id/list_item_quantity"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="Qty"
+        />
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="|"
+        />
+    <TextView
+        android:id="@+id/list_item_amount"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        />
+
+</LinearLayout>

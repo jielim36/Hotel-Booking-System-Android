@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.activity;
+package com.hotel_booking_systems_android.activity.Authentication_Part;
 
 import androidx.appcompat.app.AppCompatActivity;
 

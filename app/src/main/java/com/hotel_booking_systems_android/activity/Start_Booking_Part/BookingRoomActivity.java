@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.activity;
+package com.hotel_booking_systems_android.activity.Start_Booking_Part;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

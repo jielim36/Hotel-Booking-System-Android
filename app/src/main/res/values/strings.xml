@@ -4,6 +4,27 @@
     <string name="register_notice">No account? Register now!</string>
     <string name="user_login_btn">User Login</string>
     <string name="staff_login_btn">Staff Login</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hotel_description_00">
+        New Era Hotel is a luxury hotel located in the picturesque city center of Kajang, offering guests an exceptional accommodation experience. We proudly stand as one of the most popular hotels in the Kajang area, not only for our comfortable rooms and outstanding facilities but also for our excellent service and convenient location.
+    </string>
+    <string name="hotel_description_01_room">
+        Comfortable Rooms: Each room at New Era Hotel is meticulously designed with modern interiors, luxurious bedding, and bathroom amenities. You can expect top-notch comfort in our rooms, ensuring an impeccable stay experience.
+    </string>
+    <string name="hotel_description_02_dining">
+        Dining: Our restaurant offers a diverse range of culinary options, from international cuisine to authentic local dishes, catering to various tastes. Our bar and lounge areas provide an ideal space for relaxation and socialization.
+    </string>
+    <string name="hotel_description_03_meetingAndEvent">
+        Meetings and Events: New Era Hotel boasts versatile meeting rooms, ideal for hosting business meetings, celebrations, weddings, and various events. Our professional team ensures the smooth execution of your events, regardless of their size.
+    </string>
+    <string name="hotel_description_04_fitnessAndLeisure">
+        Fitness and Leisure: The hotel features a fitness center and an indoor swimming pool for guests to exercise and unwind. Additionally, we offer spa and massage services to provide the perfect balance of body and mind.
+    </string>
+    <string name="hotel_description_05_convenientLocation">
+        Convenient Location: New Era Hotel is situated in the heart of Kajang, close to the business district, shopping areas, and tourist attractions. Guests can easily explore all corners of the city, whether for sightseeing or business travel.
+    </string>
+    <string name="hotel_description_06">
+        Our team is committed to providing excellent service to every guest, ensuring they have an unforgettable stay at New Era Hotel. We look forward to welcoming you to experience our warm hospitality and high-quality service. Whether you are here for leisure or business, New Era Hotel will provide you with a home away from home.
+    </string>
+    <string name="hotel_checkout_instruction_content">Check-out Information:\n\nCheck-out Time: Please check out on time as per your reservation. If you require a late check-out, kindly click the &quot;Extend Stay&quot; button on the homepage to make a request. We will do our best to accommodate your needs. However, late check-out may incur additional charges, so please inquire in advance.\n\nBill Verification:\n\nPlease carefully review your bill before departure to ensure that all charges are accurate. If you have any questions or need assistance, feel free to contact our front desk staff at any time.\n\nRoom Cleanliness and Personal Belongings:\n\nPlease ensure you have taken all your personal belongings. Unused items in the room such as food or drinks from the mini-bar and room amenities may result in additional charges.\n\nKey Return:\n\nKindly return your room key card to the front desk to avoid additional charges and inconvenience. Lost key cards will incur extra fees.\n\nFeedback and Evaluation:\n\nYour feedback is highly valuable to us. Before leaving, please share your thoughts and experiences with our services and accommodations, helping us in our continual improvement.\n\nWe hope you had a pleasant stay at our hotel, and we look forward to the opportunity to serve you again in the future. If you have any future travel plans, kindly consider our hotel, where we will be dedicated to serving you.\n\nShould you have any questions or require assistance, please do not hesitate to contact our front desk staff. We wish you a smooth journey ahead!\n\nBest and regards,\n\nNew Era Hotel</string>
+
 </resources>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AboutUs_Part.HotelDescriptionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/description_hotel_background_iv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/description_hotel_background"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+
+                android:padding="10dp"
+                app:layout_constraintTop_toTopOf="@+id/description_hotel_background_iv"
+                app:layout_constraintBottom_toBottomOf="@+id/description_hotel_background_iv"
+                app:layout_constraintStart_toStartOf="@+id/description_hotel_background_iv"
+                app:layout_constraintEnd_toEndOf="@id/description_hotel_background_iv"
+                />
+
+            <ImageButton
+                android:id="@+id/hotelDescription_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_arrow_back_24"
+                android:backgroundTint="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="30dp"
+                app:layout_constraintTop_toBottomOf="@id/description_hotel_background_iv"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hotel_description_00"
+                    android:textColor="@color/gray"
+                    android:layout_marginBottom="40dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Comfortable Rooms"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/description_room_image"
+
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/hotel_description_01_room"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Dining"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/description_hotel_dining" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/hotel_description_02_dining"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Meeting Room"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/description_hotel_meeting_room"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/hotel_description_03_meetingAndEvent"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Fitness and Leisure"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/description_hotel_gym" />
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/description_hotel_leisure"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hotel_description_04_fitnessAndLeisure"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="320dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:layout_marginVertical="40dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Contact Us"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="80dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        >
+                        <ImageView
+                            android:id="@+id/contact_instagram"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/icon_instagram"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="InstagramMe"
+                            android:clickable="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Instagram"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        >
+                        <ImageView
+                            android:id="@+id/contact_whatsapp"
+                            android:layout_width="75dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/icon_whatsapp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="WhatsappMe"
+                            android:clickable="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Whatsapp"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        >
+                        <ImageView
+                            android:id="@+id/contact_phone"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/icon_phone"
+                            android:layout_marginBottom="5dp"
+                            android:contentDescription="CallMe"
+                            android:clickable="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call me"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

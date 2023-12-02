@@ -10,14 +10,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.hotel_booking_systems_android.activity.LoginActivity;
+import com.hotel_booking_systems_android.fragments.Home_Part.TenantMainFragment;
 import com.hotel_booking_systems_android.databinding.ActivityMainBinding;
-import com.hotel_booking_systems_android.fragments.HomeFragment;
-import com.hotel_booking_systems_android.fragments.ProfileFragment;
+import com.hotel_booking_systems_android.fragments.Home_Part.HomeFragment;
+import com.hotel_booking_systems_android.fragments.Home_Part.ProfileFragment;
 import com.hotel_booking_systems_android.room.Room.Room;
 import com.hotel_booking_systems_android.room.manager.RoomDBEngine;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new HomeFragment());
             } else if (itemId == R.id.nav_profile) {
                 replaceFragment(new ProfileFragment());
-            }else if(itemId == R.id.nav_settings){
-                //code...
+            }else if(itemId == R.id.nav_tenantMainPage){
+                replaceFragment(new TenantMainFragment());
             }
 
             return true;
@@ -74,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        //关闭应用时自动退出
+        super.onDestroy();
         SharedPreferences.Editor edit = sp.edit();
         edit.putBoolean("isLogin",false);
         edit.apply();

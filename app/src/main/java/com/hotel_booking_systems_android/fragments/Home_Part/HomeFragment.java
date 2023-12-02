@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.fragments;
+package com.hotel_booking_systems_android.fragments.Home_Part;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,13 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
-import com.hotel_booking_systems_android.activity.BookingRoomActivity;
-import com.hotel_booking_systems_android.activity.LoginActivity;
-import com.hotel_booking_systems_android.room.Room.Room;
+import com.hotel_booking_systems_android.activity.AboutUs_Part.HotelDescriptionActivity;
+import com.hotel_booking_systems_android.activity.AboutUs_Part.ServicesAndFacilitiesActivity;
+import com.hotel_booking_systems_android.activity.Start_Booking_Part.BookingRoomActivity;
+import com.hotel_booking_systems_android.activity.Authentication_Part.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,7 +38,9 @@ public class HomeFragment extends Fragment {
     private SharedPreferences sp;
     private View view;
     private Button startBooking_btn;
-    private Button about_btn;
+    private Button hotelDescription_btn;
+    private Button servicesAndFacilities_btn;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -82,8 +83,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
         initializeMember();
-        initializeEvent();
         initializeLoginState();
+        initializeEvent();
 
         return view;
     }
@@ -117,7 +118,9 @@ public class HomeFragment extends Fragment {
         username_tv = view.findViewById(R.id.username_tv);
         sp = getActivity().getSharedPreferences("account", Context.MODE_PRIVATE);
         startBooking_btn = view.findViewById(R.id.home_startBooking_btn);
-        about_btn = view.findViewById(R.id.home_about_btn);
+        hotelDescription_btn = view.findViewById(R.id.home_hotelDescription_btn);
+        servicesAndFacilities_btn = view.findViewById(R.id.home_servicesAndFacilities_btn);
+
     }
 
     public void initializeEvent(){
@@ -141,11 +144,19 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        hotelDescription_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), HotelDescriptionActivity.class);
+            startActivity(intent);
+        });
+
+        servicesAndFacilities_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ServicesAndFacilitiesActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     public void logoutProcess(){
-        Toast.makeText(getActivity(),"Logout!",Toast.LENGTH_SHORT).show();
-
         username_tv.setText("-");
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean("isLogin",false);

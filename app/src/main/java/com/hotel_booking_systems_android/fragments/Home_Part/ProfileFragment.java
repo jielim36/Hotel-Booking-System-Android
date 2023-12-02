@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.fragments;
+package com.hotel_booking_systems_android.fragments.Home_Part;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

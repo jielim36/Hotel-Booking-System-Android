@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TenantMainPage_Part.AmountDetailsActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/app_primary_color"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+
+        >
+
+        <ImageButton
+            android:id="@+id/amountDetails_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:backgroundTint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:padding="40dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount Details"
+            android:textStyle="bold"
+            style="@style/big_text"
+            android:layout_marginBottom="10dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#55000000"
+            android:layout_marginBottom="10dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:text="No"
+                />
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="|"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Item Name"
+                />
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="|"
+                />
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                />
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="|"
+                />
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/amount_details_listview"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount (RM):"/>
+            <TextView
+                android:id="@+id/amount_details_totalAmountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="999"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

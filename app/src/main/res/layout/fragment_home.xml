@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.Home_Part.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -86,10 +86,16 @@
             android:text="Start Booking"
             />
         <Button
-            android:id="@+id/home_about_btn"
+            android:id="@+id/home_hotelDescription_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="About"
+            android:text="Hotel Description"
+            />
+        <Button
+            android:id="@+id/home_servicesAndFacilities_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Services and Facilities"
             />
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
