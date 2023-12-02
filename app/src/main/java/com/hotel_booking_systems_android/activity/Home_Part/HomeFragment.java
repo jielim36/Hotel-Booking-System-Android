@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.fragments.Home_Part;
+package com.hotel_booking_systems_android.activity.Home_Part;
 
 import android.content.Context;
 import android.content.Intent;
