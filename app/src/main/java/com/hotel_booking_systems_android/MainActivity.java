@@ -10,10 +10,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.hotel_booking_systems_android.activity.Home_Part.TenantMainFragment;
+import com.hotel_booking_systems_android.activity.Tenant.Home_Part.TenantMainFragment;
+import com.hotel_booking_systems_android.activity.Tenant.Home_Part.HomeFragment;
+import com.hotel_booking_systems_android.activity.Tenant.Home_Part.ProfileFragment;
 import com.hotel_booking_systems_android.databinding.ActivityMainBinding;
-import com.hotel_booking_systems_android.activity.Home_Part.HomeFragment;
-import com.hotel_booking_systems_android.activity.Home_Part.ProfileFragment;
 import com.hotel_booking_systems_android.room.Room.Room;
 import com.hotel_booking_systems_android.room.manager.RoomDBEngine;
 
