@@ -27,4 +27,12 @@
     </string>
     <string name="hotel_checkout_instruction_content">Check-out Information:\n\nCheck-out Time: Please check out on time as per your reservation. If you require a late check-out, kindly click the &quot;Extend Stay&quot; button on the homepage to make a request. We will do our best to accommodate your needs. However, late check-out may incur additional charges, so please inquire in advance.\n\nBill Verification:\n\nPlease carefully review your bill before departure to ensure that all charges are accurate. If you have any questions or need assistance, feel free to contact our front desk staff at any time.\n\nRoom Cleanliness and Personal Belongings:\n\nPlease ensure you have taken all your personal belongings. Unused items in the room such as food or drinks from the mini-bar and room amenities may result in additional charges.\n\nKey Return:\n\nKindly return your room key card to the front desk to avoid additional charges and inconvenience. Lost key cards will incur extra fees.\n\nFeedback and Evaluation:\n\nYour feedback is highly valuable to us. Before leaving, please share your thoughts and experiences with our services and accommodations, helping us in our continual improvement.\n\nWe hope you had a pleasant stay at our hotel, and we look forward to the opportunity to serve you again in the future. If you have any future travel plans, kindly consider our hotel, where we will be dedicated to serving you.\n\nShould you have any questions or require assistance, please do not hesitate to contact our front desk staff. We wish you a smooth journey ahead!\n\nBest and regards,\n\nNew Era Hotel</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <color name="AppTheme_color">#11cea5</color>
+    <string-array name="room_type_options">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Family</item>
+        <item>Suite</item>
+    </string-array>
 </resources>

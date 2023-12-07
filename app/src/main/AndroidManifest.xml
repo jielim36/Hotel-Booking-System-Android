@@ -63,6 +63,29 @@
         <activity
             android:name=".activity.Tenant.TenantMainPage_Part.AmountDetailsActivity"
             android:exported="false" />
+        <activity android:name=".Employee.Tenant.HistoryTenantDetailActivity"/>
+        <activity android:name=".Employee.Tenant.HistoryTenantActivity"/>
+        <activity android:name=".Employee.Tenant.SearchActivity"/>
+        <activity android:name=".Employee.Tenant.AddTenant.AddTenantSuccessful"/>
+        <activity android:name=".Employee.Tenant.AddTenant.AddTenantFail"/>
+        <activity android:name=".Employee.Tenant.EditTenantActivity"/>
+        <activity android:name=".Employee.Tenant.AddTenant.AddTenantActivity"/>
+        <activity android:name=".Employee.Room.DeleteRoom.DeleteRoomActivity"/>
+        <activity android:name=".Employee.Room.DeleteRoom.DeleteRoomFailedActivity"/>
+        <activity android:name=".Employee.Room.DeleteRoom.DeleteRoomSuccessfulActivity"/>
+        <activity android:name=".Employee.Room.RoomDetailsActivity"/>
+        <activity android:name=".Employee.Room.RoomListActivity"/>
+        <activity android:name=".Employee.Room.AddRoom.AddRoomFailedActivity"/>
+        <activity android:name=".Employee.Room.AddRoom.AddRoomSuccessfulActivity"/>
+        <activity android:name=".Employee.Room.RoomListFilterActivity"/>
+        <activity android:name=".Employee.Room.AddRoom.AddRoomStep1Activity"/>
+        <activity android:name=".Employee.Room.AddRoom.AddRoomStep2Activity"/>
+        <activity android:name=".Employee.Room.AddRoom.AddRoomStep3Activity"/>
+        <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomPriceActivity"/>
+        <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomPriceFailedActivity"/>
+        <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomPriceSuccessfulActivity"/>
+        <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomStatusActivity"/>
+        <activity android:name=".Employee.Tenant.TenantMainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
