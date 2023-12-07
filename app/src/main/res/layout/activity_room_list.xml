@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--  Search  -->
+    <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/filter_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_filter"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            >
+
+        </ImageView>
+
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="230dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:hint="Search Content"
+            android:layout_toLeftOf="@+id/sch_img"
+            >
+
+        </EditText>
+
+        <ImageView
+            android:id="@+id/sch_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            >
+
+        </ImageView>
+
+    </RelativeLayout>
+
+
+
+
+    <!--  List_TopLine  -->
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/list_tl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="5dp"-->
+<!--        android:layout_below="@+id/sch"-->
+<!--        android:background="@color/AppTheme_color">-->
+
+<!--    </RelativeLayout>-->
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="20dp"
+        android:background="#f5f5f5"
+        android:layout_below="@+id/search"
+        >
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room List"
+            android:textSize="25sp"
+            android:textColor="@color/AppTheme_color"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            >
+
+        </TextView>
+
+        <Button
+            android:id="@+id/btn_add_room"
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:text="+ Room "
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            >
+
+        </Button>
+
+    </RelativeLayout>
+
+
+    <!--  List  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:orientation="vertical"
+        android:background="#f5f5f5"
+        >
+        <ListView
+            android:id="@+id/room_list"
+            android:layout_width="match_parent"
+            android:layout_height="660dp"
+            android:paddingLeft="21dp"
+            android:paddingRight="21dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="16dp"
+            android:paddingBottom="40dp"
+            />
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <RelativeLayout
+        android:id="@+id/ftr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_roomlist_24_active"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+        <ImageView
+            android:id="@+id/tenant_list"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/baseline_tenantlist_24" />
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_profile_24"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

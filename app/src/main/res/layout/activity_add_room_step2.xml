@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AppTheme_color"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Adding Room"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/header"
+        android:layout_centerInParent="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Step 2: More Details"
+            android:textSize="24sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/title"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Description: "
+                android:layout_gravity="center_vertical"
+                >
+
+            </TextView>
+            <EditText
+                android:id="@+id/describe"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:inputType=""
+                android:maxLength="1000"
+                android:hint="Enter Room Number"
+                android:textSize="18sp"
+
+
+
+                >
+
+            </EditText>
+
+        </LinearLayout>
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1">-->
+<!--            <TextView-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="Upload photos"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                >-->
+
+<!--            </TextView>-->
+<!--            <EditText-->
+<!--                android:id="@+id/photo"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:inputType=""-->
+<!--                android:maxLength="10"-->
+<!--                android:hint="Enter Room Number"-->
+<!--                android:textSize="18sp"-->
+
+
+
+<!--                >-->
+
+<!--            </EditText>-->
+
+<!--        </LinearLayout>-->
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/body"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        >
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:text="Back"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            >
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            >
+
+
+        </Button>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+

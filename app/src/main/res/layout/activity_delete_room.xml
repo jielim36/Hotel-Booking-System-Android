@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AppTheme_color"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="&lt;"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Delete Room"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold">
+            <!--Single, Double, Family, Suit-->
+            <!---->
+        </TextView>
+
+    </RelativeLayout>
+
+    <!--  Body  -->
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="WARNING"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/success_text"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="You are about to delete the room. Please note that upon deletion, the room and its associated information, including booking history and room settings, will be permanently deleted. This action cannot be undone. Before deleting, double-check your selection to make sure the room is no longer needed. Please operate with caution to avoid unnecessary losses. If you have questions, please contact the administrator."
+            android:layout_centerHorizontal="true"
+            android:textSize="24sp"
+            android:layout_marginTop="50dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/body"
+        android:layout_marginTop="50dp">
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="Delete Room"
+            android:textStyle="bold"
+            android:textSize="18sp"
+
+            >
+        </Button>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

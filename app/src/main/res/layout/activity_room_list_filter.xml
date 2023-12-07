@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/AppTheme_color"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Room List Filter"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+
+    <!--  body  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Room Type"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true">
+                <CheckBox
+                    android:id="@+id/cb_single"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Single" />
+
+                <CheckBox
+                    android:id="@+id/cb_double"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Double" />
+
+                <CheckBox
+                    android:id="@+id/cb_family"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Family" />
+
+                <CheckBox
+                    android:id="@+id/cb_suite"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Suite" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Room Price (per day)"
+                android:textAlignment="center"
+
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="From: "
+                    />
+
+                <EditText
+                    android:id="@+id/from_price"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:textSize="14sp"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:layout_marginLeft="5dp"
+                    android:hint="(RM)"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="To: "
+                    android:layout_marginLeft="50dp"
+                    />
+                <EditText
+                    android:id="@+id/to_price"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:textSize="14sp"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:layout_marginLeft="5dp"
+                    android:hint="(RM)"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status of Room"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/options_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true">
+                <CheckBox
+                    android:id="@+id/cb_available"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Available" />
+
+                <CheckBox
+                    android:id="@+id/cb_maintain"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Maintenance" />
+            </LinearLayout>
+            <!-- 换行 -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/options_line1"
+                android:layout_centerHorizontal="true">
+                <CheckBox
+                    android:id="@+id/cb_booked"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="Booked" />
+
+                <CheckBox
+                    android:id="@+id/cb_cleaning"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Cleaning" />
+                <!-- 换行 -->
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <!--       <CheckBox
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Maintaining" />
+                        <CheckBox
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="Cleaning" />
+         -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor of Room"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true">
+                <CheckBox
+                    android:id="@+id/cb_floor1"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="1" />
+
+                <CheckBox
+                    android:id="@+id/cb_floor2"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="2" />
+
+                <CheckBox
+                    android:id="@+id/cb_floor3"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="3" />
+
+                <CheckBox
+                    android:id="@+id/cb_floor4"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="4" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <!-- Buttons -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/ftr"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        >
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_apply"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:text="Apply"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+
+    <!-- Footer -->
+    <RelativeLayout
+        android:id="@+id/ftr"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/AppTheme_color"
+        android:layout_alignParentBottom="true">
+
+    </RelativeLayout>
+
+</RelativeLayout>

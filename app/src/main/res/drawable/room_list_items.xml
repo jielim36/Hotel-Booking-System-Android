@@ -1,0 +1,20 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#0c9678"/> <!-- 点击时的背景颜色，这里的80表示透明度 -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#0c9678"/> <!-- 长按时的背景颜色，这里的80表示透明度 -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/AppTheme_color"/> <!-- 默认状态下的背景颜色 -->
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+</selector>
