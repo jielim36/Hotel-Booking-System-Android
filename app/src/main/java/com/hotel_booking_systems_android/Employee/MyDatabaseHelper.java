@@ -11,7 +11,6 @@ import android.util.Log;
 import com.hotel_booking_systems_android.Employee.Room.Room;
 import com.hotel_booking_systems_android.Employee.Room.RoomStatus;
 import com.hotel_booking_systems_android.Employee.Tenant.Tenant;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -30,7 +30,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        setContentView(R.layout.activity_room_details);
+        setContentView(R.layout.activity_room_details1);
 
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(RoomDetailsActivity.this);
 

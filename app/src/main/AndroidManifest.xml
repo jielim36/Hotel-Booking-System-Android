@@ -85,9 +85,9 @@
         <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomPriceFailedActivity"/>
         <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomPriceSuccessfulActivity"/>
         <activity android:name=".Employee.Room.ChangeRoom.ChangeRoomStatusActivity"/>
-        <activity android:name=".Employee.Tenant.TenantMainActivity"/>
+<!--        <activity android:name=".Employee.Tenant.TenantMainActivity"/>-->
         <activity
-            android:name=".MainActivity"
+            android:name=".Employee.Tenant.TenantMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
