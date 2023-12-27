@@ -89,6 +89,7 @@
                 android:layout_marginRight="5dp"
                 />
             <TextView
+                android:id="@+id/room_size_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Double Size"
@@ -132,56 +133,6 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Check-in Date"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:layout_marginRight="5dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2023-11-05 13:30"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            >
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Check-out Date"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:layout_marginRight="5dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2023-11-08 13:30"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            >
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
                 android:text="Total Amount"
                 />
             <TextView
@@ -210,11 +161,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/checkout_confirm_btn"
+        android:id="@+id/checkout_back_btn"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:textStyle="bold"
-        android:text="Confirm"
+        android:text="Back"
         style="@style/big_text"
         android:layout_marginTop="80dp"
         />

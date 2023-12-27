@@ -36,8 +36,9 @@ public class CheckoutActivity extends AppCompatActivity {
     Button checkout_btn;
     TextView instructionContent;
     TextView checkout_amount_tv;
+    TextView customerName_tv;
+    TextView roomNo_tv;
     boolean instructionDropdown = false;
-    boolean amountDetailsDropdown = false;
     List<Item> unpaidItemListByUserId;
     ItemDatabaseHelper itemDBHelper;
     TenantRoomDatabaseHelper tenantRoomDatabaseHelper;
@@ -61,8 +62,31 @@ public class CheckoutActivity extends AppCompatActivity {
         itemDBHelper = new ItemDatabaseHelper(getApplicationContext());
         tenantRoomDatabaseHelper = new TenantRoomDatabaseHelper(getApplicationContext());
         checkout_amount_tv = findViewById(R.id.checkout_amount);
+        customerName_tv = findViewById(R.id.checkout_customerName);
+        roomNo_tv = findViewById(R.id.checkout_roomNo);
 
-        Integer userId = AccountSharedPreferences.getInstance(getApplicationContext()).getUserId();
+        //set value
+        AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getApplicationContext());
+
+        //set customer name
+        customerName_tv.setText(accSp.getUsername());
+
+        //list all rooms no
+        Integer userId = accSp.getUserId();
+        TenantRoomDatabaseHelper tenantRoomDatabaseHelper = new TenantRoomDatabaseHelper(getApplicationContext());
+        List<TenantRoom> rooms = tenantRoomDatabaseHelper.getTenantRoomsByUserIdAndStatus(userId, TenantRoom.Status.CHECKED_IN);
+        String roomsNoContent = "";
+        for(int i = 0 ; i < rooms.size() ; i++){
+            if(i > 0){
+                roomsNoContent += "," + rooms.get(i).getRoomId();
+            }else{
+                roomsNoContent += String.valueOf(rooms.get(i).getRoomId());
+            }
+        }
+        roomNo_tv.setText(roomsNoContent);
+
+
+        //set total amount
         unpaidItemListByUserId = itemDBHelper.getUnpaidItemByUserId(userId);
 
         for(Item item : unpaidItemListByUserId){
@@ -70,6 +94,8 @@ public class CheckoutActivity extends AppCompatActivity {
             Log.e("amount", "Item: " + item.getTotalAmount());
         }
         checkout_amount_tv.setText(String.valueOf(totalAmount));
+
+
     }
 
     private void initializeEvent(){

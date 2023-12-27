@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HotelBookingSystemsAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Tenant.TenantMainPage_Part.CallServiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Tenant.AboutUs_Part.ServicesAndFacilitiesActivity"
             android:exported="false" />
         <activity
@@ -63,29 +66,29 @@
         <activity
             android:name=".Activity.Tenant.TenantMainPage_Part.AmountDetailsActivity"
             android:exported="false" />
-        <activity android:name=".Activity.Employee.Tenant.HistoryTenantDetailActivity"/>
-        <activity android:name=".Activity.Employee.Tenant.HistoryTenantActivity"/>
-        <activity android:name=".Activity.Employee.Tenant.SearchActivity"/>
-        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantSuccessful"/>
-        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantFail"/>
-        <activity android:name=".Activity.Employee.Tenant.EditTenantActivity"/>
-        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantActivity"/>
-        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomActivity"/>
-        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomFailedActivity"/>
-        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomSuccessfulActivity"/>
-        <activity android:name=".Activity.Employee.Room.RoomDetailsActivity"/>
-        <activity android:name=".Activity.Employee.Room.RoomListActivity"/>
-        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomFailedActivity"/>
-        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomSuccessfulActivity"/>
-        <activity android:name=".Activity.Employee.Room.RoomListFilterActivity"/>
-        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep1Activity"/>
-        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep2Activity"/>
-        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep3Activity"/>
-        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceActivity"/>
-        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceFailedActivity"/>
-        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceSuccessfulActivity"/>
-        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomStatusActivity"/>
-        <activity android:name=".Activity.Employee.Tenant.TenantMainActivity"/>
+        <activity android:name=".Activity.Employee.Tenant.HistoryTenantDetailActivity" />
+        <activity android:name=".Activity.Employee.Tenant.HistoryTenantActivity" />
+        <activity android:name=".Activity.Employee.Tenant.SearchActivity" />
+        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantSuccessful" />
+        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantFail" />
+        <activity android:name=".Activity.Employee.Tenant.EditTenantActivity" />
+        <activity android:name=".Activity.Employee.Tenant.AddTenant.AddTenantActivity" />
+        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomActivity" />
+        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomFailedActivity" />
+        <activity android:name=".Activity.Employee.Room.DeleteRoom.DeleteRoomSuccessfulActivity" />
+        <activity android:name=".Activity.Employee.Room.RoomDetailsActivity" />
+        <activity android:name=".Activity.Employee.Room.RoomListActivity" />
+        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomFailedActivity" />
+        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomSuccessfulActivity" />
+        <activity android:name=".Activity.Employee.Room.RoomListFilterActivity" />
+        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep1Activity" />
+        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep2Activity" />
+        <activity android:name=".Activity.Employee.Room.AddRoom.AddRoomStep3Activity" />
+        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceActivity" />
+        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceFailedActivity" />
+        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomPriceSuccessfulActivity" />
+        <activity android:name=".Activity.Employee.Room.ChangeRoom.ChangeRoomStatusActivity" />
+        <activity android:name=".Activity.Employee.Tenant.TenantMainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

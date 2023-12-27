@@ -10,9 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hotel_booking_systems_android.DB.ItemDatabaseHelper;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.bean.Food;
 import com.hotel_booking_systems_android.bean.Item;
+import com.hotel_booking_systems_android.service.AccountSharedPreferences;
 
 
 public class FoodDetailsActivity extends AppCompatActivity {
@@ -61,7 +63,6 @@ public class FoodDetailsActivity extends AppCompatActivity {
         food = Food.getFoodListInstance().get(foodId);
         foodName.setText(food.getName());
         foodPrice.setText("Price: "+String.valueOf(food.getPrice()));
-        foodStock.setText("Stock: " + String.valueOf(food.getStock()));
         foodDescription.setText(food.getDescription());
         foodQuantity.setText("1");//default = 1
 
@@ -86,12 +87,21 @@ public class FoodDetailsActivity extends AppCompatActivity {
         });
 
         order_btn.setOnClickListener(v -> {
-            int currentStock = Food.getFoodListInstance().get(foodId).getStock();
             int quantity = Integer.parseInt(foodQuantity.getText().toString());
-//            Item.getItemListInstance().add(new Item(Item.getItemListInstance().size()+1,food.getName(),food.getPrice(),quantity));
-            Food.getFoodListInstance().get(foodId).setStock(currentStock-quantity);//update stock number
-            Intent intent = new Intent(FoodDetailsActivity.this, OrderFoodActivity.class);
-            startActivity(intent);
+
+            //update into item database
+            ItemDatabaseHelper itemDatabaseHelper = new ItemDatabaseHelper(getApplicationContext());
+            Item foodItem = new Item();
+            foodItem.setItemName(food.getName());
+            foodItem.setItemPrice(food.getPrice());
+            foodItem.setQuantity(quantity);
+            foodItem.setTotalAmount(food.getPrice() * quantity);
+            foodItem.setStatus(Item.Status.UNPAID);
+            foodItem.setUserId(AccountSharedPreferences.getInstance(getApplicationContext()).getUserId());
+            itemDatabaseHelper.addItem(foodItem);
+
+            Toast.makeText(this, "Order Successfully", Toast.LENGTH_SHORT).show();
+            onBackPressed();
         });
 
     }

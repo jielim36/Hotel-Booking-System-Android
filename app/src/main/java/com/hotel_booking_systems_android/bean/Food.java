@@ -10,35 +10,32 @@ public class Food {
     private String description;
     private String imagePath;
     private double price;
-    private int stock;
 
     private static final List<Food> foodList = new ArrayList<>();
 
-    //initialize data
-    static{
-        foodList.add(new Food(1,"Chicken Rice" ,"This is a Chicken Rice", "xx",15,100));
-        foodList.add(new Food(2,"Pizza","This is a Pizza" , "xx",30,100));
-        foodList.add(new Food(3,"Sushi","This is a Sushi", "xx",20,100));
+    // 初始化数据
+    static {
+        foodList.add(new Food(1, "Chicken Rice", "This is a Chicken Rice", "xx", 15));
+        foodList.add(new Food(2, "Pizza", "This is a Pizza", "xx", 30));
+        foodList.add(new Food(3, "Sushi", "This is a Sushi", "xx", 20));
     }
 
-    public Food(int id, String name, String imagePath, double price, int stock) {
+    public Food(int id, String name, String imagePath, double price) {
         this.id = id;
         this.name = name;
         this.imagePath = imagePath;
         this.price = price;
-        this.stock = stock;
     }
 
-    public Food(int id, String name, String description, String imagePath, double price, int stock) {
+    public Food(int id, String name, String description, String imagePath, double price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.imagePath = imagePath;
         this.price = price;
-        this.stock = stock;
     }
 
-    public static List<Food> getFoodListInstance(){
+    public static List<Food> getFoodListInstance() {
         return foodList;
     }
 
@@ -80,13 +77,5 @@ public class Food {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
     }
 }

@@ -51,11 +51,9 @@ public class FoodAdapter extends BaseAdapter {
         TextView itemName = convertView.findViewById(R.id.food_list_name);
         TextView itemDesc = convertView.findViewById(R.id.food_list_description);
         TextView itemPrice = convertView.findViewById(R.id.food_list_price);
-        TextView itemStock = convertView.findViewById(R.id.food_list_stock);
 
         itemName.setText(dataList.get(position).getName());
         itemDesc.setText(dataList.get(position).getDescription());
-        itemStock.setText("Stock: " + String.valueOf(dataList.get(position).getStock()));
         itemPrice.setText("Price: "+String.valueOf(dataList.get(position).getPrice()));
 
         return convertView;

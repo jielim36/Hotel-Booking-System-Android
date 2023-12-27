@@ -6,19 +6,26 @@ import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hotel_booking_systems_android.DB.TenantRoomDatabaseHelper;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.bean.TenantRoom;
+import com.hotel_booking_systems_android.service.AccountSharedPreferences;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class ExtendStayActivity extends AppCompatActivity {
 
     ImageButton selectDate_btn;
     EditText inputDate_et;
     ImageButton previousPage_btn;
+    TextView roomNo_tv;
+    TextView customerName_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,27 @@ public class ExtendStayActivity extends AppCompatActivity {
         selectDate_btn = findViewById(R.id.extend_stay_select_date_btn);
         inputDate_et = findViewById(R.id.extendStay_extendDate);
         previousPage_btn = findViewById(R.id.extend_stay_back_btn);
+        roomNo_tv = findViewById(R.id.extendStay_roomNo);
+        customerName_tv = findViewById(R.id.extendStay_customerName);
+
+        //set value
+        AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getApplicationContext());
+        //set customer name
+        customerName_tv.setText(accSp.getUsername());
+
+        //list all rooms no
+        Integer userId = accSp.getUserId();
+        TenantRoomDatabaseHelper tenantRoomDatabaseHelper = new TenantRoomDatabaseHelper(getApplicationContext());
+        List<TenantRoom> rooms = tenantRoomDatabaseHelper.getTenantRoomsByUserIdAndStatus(userId, TenantRoom.Status.CHECKED_IN);
+        String roomsNoContent = "";
+        for(int i = 0 ; i < rooms.size() ; i++){
+            if(i > 0){
+                roomsNoContent += "," + rooms.get(i).getRoomId();
+            }else{
+                roomsNoContent += String.valueOf(rooms.get(i).getRoomId());
+            }
+        }
+        roomNo_tv.setText(roomsNoContent);
     }
 
     private void initializeEvent() {

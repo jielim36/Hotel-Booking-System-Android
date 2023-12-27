@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.CallServiceActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.ExtendStayActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.OrderFoodActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.RoomDetailsActivity;
@@ -85,6 +86,11 @@ public class TenantMainFragment extends Fragment {
 
         orderFood_btn.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), OrderFoodActivity.class);
+            startActivity(intent);
+        });
+
+        callService_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CallServiceActivity.class);
             startActivity(intent);
         });
     }

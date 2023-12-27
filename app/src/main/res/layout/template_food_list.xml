@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         app:layout_constraintStart_toEndOf="@+id/food_list_img"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical"
@@ -46,12 +46,7 @@
             android:text="Food Price"
             />
 
-        <TextView
-            android:id="@+id/food_list_stock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Food Stock"
-            />
+
 
     </LinearLayout>
 
