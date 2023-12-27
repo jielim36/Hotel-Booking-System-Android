@@ -1,4 +1,4 @@
-Configuration:
+# Configuration:
 
 1. `build.grader.kts` file: change `compileSdk` to ***34***
 ```kotlin
