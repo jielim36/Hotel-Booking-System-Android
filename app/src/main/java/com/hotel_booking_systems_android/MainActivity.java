@@ -10,18 +10,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.hotel_booking_systems_android.activity.Tenant.Home_Part.TenantMainFragment;
-import com.hotel_booking_systems_android.activity.Tenant.Home_Part.HomeFragment;
-import com.hotel_booking_systems_android.activity.Tenant.Home_Part.ProfileFragment;
+import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.TenantMainFragment;
+import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.HomeFragment;
+import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.ProfileFragment;
 import com.hotel_booking_systems_android.databinding.ActivityMainBinding;
-import com.hotel_booking_systems_android.room.Room.Room;
-import com.hotel_booking_systems_android.room.manager.RoomDBEngine;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     SharedPreferences sp;
-    private RoomDBEngine roomDBEngine;
+//    private RoomDBEngine roomDBEngine;
 
 
     @Override
@@ -30,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialize();
-        initializeDatabase();
+//        initializeDatabase();
+
+        //After booking will jump to main page, verify which fragment other page want to go
+        if(getIntent().getStringExtra("fragmentToShow") != null){
+            jumpTargetFragment(getIntent().getStringExtra("fragmentToShow"));
+        }
 
     }
 
@@ -50,7 +53,13 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_profile) {
                 replaceFragment(new ProfileFragment());
             }else if(itemId == R.id.nav_tenantMainPage){
-                replaceFragment(new TenantMainFragment());
+                boolean isLogin = sp.getBoolean("isLogin", false);
+                boolean isBooking = sp.getBoolean("isBooking", false);
+                if(isLogin && isBooking){
+                    replaceFragment(new TenantMainFragment());
+                }else{
+                    Toast.makeText(MainActivity.this , "Please login and booking room first..." , Toast.LENGTH_SHORT).show();
+                }
             }
 
             return true;
@@ -63,12 +72,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void jumpTargetFragment(String fragment){
+        if (fragment.equals("home")){
+            replaceFragment(new HomeFragment());
+        } else if (fragment.equals("profile")) {
+            replaceFragment(new ProfileFragment());
+        }else if(fragment.equals("tenant")){
+            boolean isLogin = sp.getBoolean("isLogin", false);
+            boolean isBooking = sp.getBoolean("isBooking", false);
+            if(isLogin && isBooking){
+                replaceFragment(new TenantMainFragment());
+            }else{
+                Toast.makeText(MainActivity.this , "Please login and booking room first..." , Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
+
     public void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout , fragment);
         fragmentTransaction.commit();
-
     }
 
     @Override
@@ -80,35 +105,35 @@ public class MainActivity extends AppCompatActivity {
         edit.apply();
     }
 
-    public void initializeDatabase(){
-        roomDBEngine = new RoomDBEngine(MainActivity.this);
-
-        Room getFirstRoom = roomDBEngine.getRoomByFloorAndRoomNumber(1, 1);
-        if (getFirstRoom == null){
-            //room data
-            Room room1 = new Room( 1, "1", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
-            Room room2 = new Room( 1, "2", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
-            Room room3 = new Room(1, "3", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
-            Room room4 = new Room(1, "4", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
-
-            Room room5 = new Room( 2, "1", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
-            Room room6 = new Room( 2, "2", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
-            Room room7 = new Room(2, "3", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
-            Room room8 = new Room(2, "4", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
-
-            Room room9 = new Room( 3, "1", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
-            Room room10 = new Room( 3, "2", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
-            Room room11 = new Room(3, "3", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
-            Room room12 = new Room(3, "4", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
-
-            Room room13 = new Room( 4, "1", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
-            Room room14 = new Room( 4, "2", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
-            Room room15 = new Room(4, "3", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
-            Room room16 = new Room(4, "4", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
-
-            roomDBEngine.insertRooms(room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12,room13,room14,room15,room16);
-        }
-
-    }
+//    public void initializeDatabase(){
+//        roomDBEngine = new RoomDBEngine(MainActivity.this);
+//
+//        Room getFirstRoom = roomDBEngine.getRoomByFloorAndRoomNumber(1, 1);
+//        if (getFirstRoom == null){
+//            //room data
+//            Room room1 = new Room( 1, "1", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room2 = new Room( 1, "2", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room3 = new Room(1, "3", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room4 = new Room(1, "4", Room.ROOM_TYPE_SINGLE, 100.00, Room.AVAILABILITY_AVAILABLE);
+//
+//            Room room5 = new Room( 2, "1", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room6 = new Room( 2, "2", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room7 = new Room(2, "3", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room8 = new Room(2, "4", Room.ROOM_TYPE_DOUBLE, 280.00, Room.AVAILABILITY_AVAILABLE);
+//
+//            Room room9 = new Room( 3, "1", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room10 = new Room( 3, "2", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room11 = new Room(3, "3", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room12 = new Room(3, "4", Room.ROOM_TYPE_FAMILY, 340.00, Room.AVAILABILITY_AVAILABLE);
+//
+//            Room room13 = new Room( 4, "1", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room14 = new Room( 4, "2", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room15 = new Room(4, "3", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+//            Room room16 = new Room(4, "4", Room.ROOM_TYPE_SUITE, 550.00, Room.AVAILABILITY_AVAILABLE);
+//
+//            roomDBEngine.insertRooms(room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12,room13,room14,room15,room16);
+//        }
+//
+//    }
 
 }

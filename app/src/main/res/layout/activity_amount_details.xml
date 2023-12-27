@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Tenant.TenantMainPage_Part.AmountDetailsActivity"
+    tools:context=".Activity.Tenant.TenantMainPage_Part.AmountDetailsActivity"
     android:orientation="vertical"
     >
 
@@ -67,9 +67,8 @@
                 android:text="|"
                 />
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Item Name"
                 />
             <TextView
@@ -79,9 +78,9 @@
                 android:text="|"
                 />
             <TextView
-                android:layout_width="60dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
+                android:text="Qty"
                 />
             <TextView
                 android:layout_width="20dp"

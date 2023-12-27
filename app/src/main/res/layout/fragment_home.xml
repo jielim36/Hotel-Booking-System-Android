@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.Tenant.Home_Part.HomeFragment">
+    tools:context=".Activity.Tenant.Home_Part.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -96,6 +96,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Services and Facilities"
+            />
+        <Button
+            android:id="@+id/home_goEmployeePage_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Employee Page (For testing)"
             />
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

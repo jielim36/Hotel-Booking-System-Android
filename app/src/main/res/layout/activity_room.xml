@@ -44,7 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewCheckOutDate"
             android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="40dp"
+            >
 
             <!-- ImageButton for Single Room -->
             <ImageButton
@@ -102,7 +104,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/singleRoomLayout"
             android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="40dp"
+            >
 
             <ImageButton
                 android:id="@+id/doubleRoomImage"
@@ -168,7 +172,9 @@
                 android:background="?android:selectableItemBackground"
                 android:src="@mipmap/ic_hotel_image"
                 android:scaleType="fitXY"
-                android:adjustViewBounds="true"/>
+                android:adjustViewBounds="true"
+                android:paddingHorizontal="40dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -228,7 +234,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/familyRoomLayout"
             android:orientation="vertical"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="40dp"
+            >
 
             <ImageButton
                 android:id="@+id/suiteRoomImage"

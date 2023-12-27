@@ -20,9 +20,8 @@
         />
     <TextView
         android:id="@+id/list_item_name"
-        android:layout_width="0dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="Item Name"
         />
     <TextView
@@ -33,7 +32,7 @@
         />
     <TextView
         android:id="@+id/list_item_quantity"
-        android:layout_width="30dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:text="Qty"
         />
