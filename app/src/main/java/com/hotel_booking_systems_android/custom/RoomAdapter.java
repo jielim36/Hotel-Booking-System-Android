@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -45,6 +46,7 @@ public class RoomAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.template_room_list, parent, false);
         }
 
+        ImageView roomPic = convertView.findViewById(R.id.room_list_img);
         TextView roomNoTextView = convertView.findViewById(R.id.room_list_room_no);
         TextView priceTextView = convertView.findViewById(R.id.room_list_price);
         TextView maxPeopleTextView = convertView.findViewById(R.id.room_list_max_people);
@@ -60,6 +62,8 @@ public class RoomAdapter extends BaseAdapter {
         if(room.getStatus() == RoomStatus.BOOKED){
             convertView.setBackgroundColor(ContextCompat.getColor(context,R.color.gray));
         }
+
+        roomPic.setImageResource(room.getImagesByType(room.getType()));
 
         return convertView;
     }

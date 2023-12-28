@@ -25,6 +25,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private TextView roomIdTextView, roomSizeTextView, customerNameTextView, totalAmountTextView;
     private ImageButton amountDetailsButton;
     private Button back_btn;
+    private ImageButton navigateBack_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
         totalAmountTextView = findViewById(R.id.room_details_amount);
         amountDetailsButton = findViewById(R.id.room_details_amount_details_btn);
         back_btn = findViewById(R.id.checkout_back_btn);
+        navigateBack_btn = findViewById(R.id.room_details_back_btn);
 
         //get value
         AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(this);
@@ -88,6 +90,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
         });
 
         back_btn.setOnClickListener(v -> {
+            onBackPressed();
+        });
+
+        navigateBack_btn.setOnClickListener(v -> {
             onBackPressed();
         });
     }

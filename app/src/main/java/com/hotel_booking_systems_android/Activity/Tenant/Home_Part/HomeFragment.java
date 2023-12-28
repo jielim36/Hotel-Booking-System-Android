@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.Tenant;
@@ -34,15 +35,15 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private Button loginAndLogout_btn;//include logout function
+    private TextView loginAndLogout_btn;//include logout function
     private TextView username_tv;
     private Intent loginIntent;
     private SharedPreferences sp;
     private View view;
-    private Button startBooking_btn;
-    private Button hotelDescription_btn;
-    private Button servicesAndFacilities_btn;
-    private Button goEmployeePage_btn;
+    private LinearLayout startBooking_btn;
+    private LinearLayout hotelDescription_btn;
+    private LinearLayout servicesAndFacilities_btn;
+    private LinearLayout goEmployeePage_btn;
 
 
     // TODO: Rename and change types of parameters

@@ -144,6 +144,9 @@ public class RoomListActivity extends AppCompatActivity {
                 // 启动 RoomDetailsActivity，并传递房间信息
                 Intent intent = new Intent(RoomListActivity.this, RoomDetailsActivity.class);
 
+                //set room image
+                selectedRoom.setImages(selectedRoom.getImagesByType(selectedRoom.getType()));
+
                 // 传递房间ID或其他信息
                 intent.putExtra("room_no", selectedRoom.getRoom_no());
                 intent.putExtra("price", selectedRoom.getPrice());

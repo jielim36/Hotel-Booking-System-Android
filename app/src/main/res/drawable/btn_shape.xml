@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <corners
-        android:radius="20dp"
-        android:topLeftRadius="5dp"
-        android:topRightRadius="5dp"
-        android:bottomLeftRadius="5dp"
-        android:bottomRightRadius="5dp"
+        android:radius="8dp"
         />
 
     <padding
-        android:left="2dp"
-        android:right="2dp"
+        android:left="20dp"
+        android:right="20dp"
         android:top="2dp"
         android:bottom="2dp"
         />
 
     <size
-        android:height="50dp"
-        android:width="80dp"
+        android:height="30dp"
+        android:width="50dp"
         />
 
-    <solid
-        android:color="#2f54eb"
+    <gradient
+        android:startColor="@color/app_primary_color"
+        android:endColor="#009Ef0"
+        android:type="linear"
+        android:angle="45"
         />
 
 

@@ -7,7 +7,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
@@ -36,6 +37,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"/>
 
+        <View
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:background="#ccc"
+            android:layout_below="@+id/textViewCheckOutDate"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            />
 
         <!-- Single Room -->
         <LinearLayout
@@ -48,16 +57,27 @@
             android:paddingHorizontal="40dp"
             >
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Single Room"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                />
+
             <!-- ImageButton for Single Room -->
             <ImageButton
                 android:id="@+id/singleRoomImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?android:selectableItemBackground"
-                android:src="@mipmap/ic_hotel_image"
+                android:src="@drawable/room_pic_single"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:contentDescription="ImageButton for Single Room"
+
                 />
 
             <LinearLayout
@@ -108,12 +128,22 @@
             android:paddingHorizontal="40dp"
             >
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Double Room"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                />
+
             <ImageButton
                 android:id="@+id/doubleRoomImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?android:selectableItemBackground"
-                android:src="@mipmap/ic_hotel_image"
+                android:src="@drawable/room_pic_double"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:contentDescription="ImageButton for Double Room"
@@ -165,12 +195,22 @@
             android:orientation="vertical"
             android:layout_marginTop="20dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Family Room"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                />
+
             <ImageButton
                 android:id="@+id/familyRoomImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?android:selectableItemBackground"
-                android:src="@mipmap/ic_hotel_image"
+                android:src="@drawable/room_pic_family"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:paddingHorizontal="40dp"
@@ -225,6 +265,7 @@
                     android:textSize="18sp"
                     android:layout_marginStart="8dp"/>
             </LinearLayout>
+
         </LinearLayout>
 
         <!-- Suite Room -->
@@ -238,12 +279,22 @@
             android:paddingHorizontal="40dp"
             >
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suite Room"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                />
+
             <ImageButton
                 android:id="@+id/suiteRoomImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?android:selectableItemBackground"
-                android:src="@mipmap/ic_hotel_image"
+                android:src="@drawable/room_pic_suite"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"/>
 

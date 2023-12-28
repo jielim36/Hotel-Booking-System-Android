@@ -95,14 +95,20 @@ public class BookingRoomActivity extends AppCompatActivity {
                     }
                     checkInDate = selectedDate;
                 } else if (dateEditText == checkOutDateEditText) {
-                    if (selectedDate.equals(checkInDate)) {
-                        Toast.makeText(BookingRoomActivity.this, "Check-out date cannot be the same as check-in date", Toast.LENGTH_SHORT).show();
-                        return;
-                    } else if (selectedDate.before(checkInDate)) {
-                        Toast.makeText(BookingRoomActivity.this, "Invalid check-out date", Toast.LENGTH_SHORT).show();
+                    if (checkInDate != null) {
+                        if (selectedDate.equals(checkInDate)) {
+                            Toast.makeText(BookingRoomActivity.this, "Check-out date cannot be the same as check-in date", Toast.LENGTH_SHORT).show();
+                            return;
+                        } else if (selectedDate.before(checkInDate)) {
+                            Toast.makeText(BookingRoomActivity.this, "Invalid check-out date", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        checkOutDate = selectedDate;
+                    } else {
+                        // Check-in date is not selected yet
+                        Toast.makeText(BookingRoomActivity.this, "Please select check-in date first", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    checkOutDate = selectedDate;
                 }
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");

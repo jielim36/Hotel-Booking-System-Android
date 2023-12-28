@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Tenant.Start_Booking_Part.BookingRoomActivity">
+    tools:context=".Activity.Tenant.Start_Booking_Part.BookingRoomActivity"
+    >
 
     <!-- Toolbar with Up Arrow -->
     <androidx.appcompat.widget.Toolbar
@@ -14,12 +15,37 @@
         android:background="@color/app_primary_color" />
 
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Booking Date"
+        android:layout_below="@+id/toolbar"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:paddingVertical="5dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="2dp"
+        android:background="#ccc"
+        android:layout_below="@+id/title"
+        android:layout_centerInParent="true"
+        />
+
     <!-- Check-In Date Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/checkInDateInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@id/title"
+        android:paddingHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/checkInDate"
@@ -28,7 +54,8 @@
             android:hint="Check-In Date"
             android:inputType="none"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Check-Out Date Input -->
@@ -36,7 +63,9 @@
         android:id="@+id/checkOutDateInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/checkInDateInput">
+        android:layout_below="@id/checkInDateInput"
+        android:paddingHorizontal="40dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/checkOutDate"
@@ -50,12 +79,15 @@
 
         <Button
             android:id="@+id/searchButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_below="@id/checkOutDate"
             android:onClick="room"
             android:text="Search"
-            android:backgroundTint="@color/app_primary_color" />
+            android:backgroundTint="@color/app_primary_color"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

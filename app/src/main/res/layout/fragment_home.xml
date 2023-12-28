@@ -9,100 +9,237 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <Button
-        android:id="@+id/loginAndLogout_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.01"
-        app:layout_constraintHorizontal_bias="0.95"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        >
 
         <TextView
-            android:id="@+id/app_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="30sp"
+            android:id="@+id/loginAndLogout_btn"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Login"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textSize="18sp"
             android:textColor="@color/white"
-            android:background="@color/app_primary_color"
-            android:paddingHorizontal="15sp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-
-            app:layout_constraintTop_toBottomOf="@+id/app_title"
+            android:background="@drawable/btn_shape"
+            android:clickable="true"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.02"
+            app:layout_constraintVertical_bias="0.01"
+            app:layout_constraintHorizontal_bias="0.95"
             />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/home_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            android:layout_margin="10dp"
             >
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
+                android:text="@string/app_name"
+                android:textSize="40sp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_shape"
+                android:paddingHorizontal="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username:"
-                android:layout_marginRight="10dp"
+                android:text="@string/welcome"
+                android:textSize="18sp"
+                android:paddingVertical="3dp"
+                app:layout_constraintTop_toBottomOf="@+id/app_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.02"
                 />
-            <TextView
-                android:id="@+id/username_tv"
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="None"
-                android:textColor="@color/app_primary_color"
-                style="@style/big_text"
-                />
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username:"
+                    android:layout_marginRight="10dp"
+                    />
+                <TextView
+                    android:id="@+id/username_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="None"
+                    android:textColor="@color/app_primary_color"
+                    style="@style/big_text"
+                    />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/home_startBooking_btn"
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Booking"
-            />
-        <Button
-            android:id="@+id/home_hotelDescription_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hotel Description"
-            />
-        <Button
-            android:id="@+id/home_servicesAndFacilities_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Services and Facilities"
-            />
-        <Button
-            android:id="@+id/home_goEmployeePage_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Employee Page (For testing)"
-            />
-    </LinearLayout>
+            android:rowCount="2"
+            android:columnCount="2"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/home_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            android:padding="20dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/home_startBooking_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/btn_square_shape"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/booking"
+                    android:paddingTop="10dp"
+                    android:contentDescription="Logo1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Booking"
+                    android:textSize="18sp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/white"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_hotelDescription_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/btn_square_shape"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="5dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/hotel"
+                    android:contentDescription="Logo2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel Description"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_servicesAndFacilities_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/btn_square_shape"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/service"
+                    android:contentDescription="Logo3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Services and Facilities"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_goEmployeePage_btn"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@drawable/btn_square_shape"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/admin"
+                    android:paddingTop="10dp"
+                    android:contentDescription="Logo4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Employee Entry"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:paddingBottom="15dp"
+                    />
+
+            </LinearLayout>
+        </GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
