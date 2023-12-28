@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.DB.User.User;
-import com.hotel_booking_systems_android.DB.manager.UserDBEngine;
+import com.hotel_booking_systems_android.DB.User.UserDBEngine;
 
 public class RegisterActivity extends AppCompatActivity {
 

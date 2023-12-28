@@ -14,6 +14,7 @@ import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.TenantMainFra
 import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.HomeFragment;
 import com.hotel_booking_systems_android.Activity.Tenant.Home_Part.ProfileFragment;
 import com.hotel_booking_systems_android.databinding.ActivityMainBinding;
+import com.hotel_booking_systems_android.service.AccountSharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         //member initialize
         sp = getSharedPreferences("account", Context.MODE_PRIVATE);
+        AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getApplicationContext());
 
         //event initialize
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -51,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.nav_home){
                 replaceFragment(new HomeFragment());
             } else if (itemId == R.id.nav_profile) {
-                replaceFragment(new ProfileFragment());
+                if(accSp.isLogin()){
+                    replaceFragment(new ProfileFragment());
+                }else {
+                    Toast.makeText(this, "Please Login First", Toast.LENGTH_SHORT).show();
+                }
             }else if(itemId == R.id.nav_tenantMainPage){
                 boolean isLogin = sp.getBoolean("isLogin", false);
                 boolean isBooking = sp.getBoolean("isBooking", false);

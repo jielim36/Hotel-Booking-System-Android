@@ -1,4 +1,4 @@
-package com.hotel_booking_systems_android.DB.manager;
+package com.hotel_booking_systems_android.DB.User;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -32,6 +32,9 @@ public class UserDBEngine {
 
     public void deleteUsers(User ...users){
         new DeleteAsyncTask(userDao).execute(users);
+    }
+    public User getUserById(Integer userId){
+        return userDao.getUserByUserId(userId);
     }
 
     public List<User> queryAllUsers(){

@@ -124,4 +124,31 @@ public class ItemDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public List<Item> getItemsByUserId(int userId) {
+        List<Item> itemList = new ArrayList<>();
+        String SELECT_QUERY = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_USER_ID + " = ?";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(SELECT_QUERY, new String[]{String.valueOf(userId)});
+
+        if (cursor.moveToFirst()) {
+            do {
+                Item item = new Item();
+                item.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+                item.setUserId(cursor.getInt(cursor.getColumnIndex(COLUMN_USER_ID)));
+                item.setItemName(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
+                item.setItemPrice(cursor.getDouble(cursor.getColumnIndex(COLUMN_ITEM_PRICE)));
+                item.setQuantity(cursor.getInt(cursor.getColumnIndex(COLUMN_QUANTITY)));
+                item.setTotalAmount(cursor.getDouble(cursor.getColumnIndex(COLUMN_TOTAL_AMOUNT)));
+                item.setStatus(Item.Status.valueOf(cursor.getString(cursor.getColumnIndex(COLUMN_STATUS))));
+
+                itemList.add(item);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return itemList;
+    }
+
+
 }

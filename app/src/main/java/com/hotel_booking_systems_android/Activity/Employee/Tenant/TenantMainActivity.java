@@ -16,6 +16,7 @@ import android.widget.ListView;
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
 import com.hotel_booking_systems_android.Activity.Employee.Room.RoomListActivity;
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.AddTenant.AddTenantActivity;
+import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class TenantMainActivity extends AppCompatActivity {
     ArrayAdapter arrayAdapter; // 将数据绑定到ListView的适配器
 
     Button addButton, historyButton;
-    ImageView search, back, roomlist, profile;
+    ImageView search, back_btn, roomlist, profile;
     MyDatabaseHelper myDatabaseHelper; // 管理数据库的辅助类
     ArrayList<Tenant> tenants; // 保存租户对象的列表
 
@@ -122,6 +123,12 @@ public class TenantMainActivity extends AppCompatActivity {
 //
 //            }
 //        });
+
+        back_btn = findViewById(R.id.tenant_returnHome_btn);
+        back_btn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
     }
 
     // 从数据库刷新租户列表的方法

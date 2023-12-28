@@ -9,9 +9,11 @@ public class AccountSharedPreferences {
     private final SharedPreferences sharedPreferences;
 
     private final String KEY_IS_LOGIN = "isLogin";
+    private final String KEY_AUTO_LOGIN = "autoLogin";
     private final String KEY_IS_BOOKING = "isBooking";
     private final String KEY_USERNAME = "username";
     private final String KEY_USERID = "userId";
+    private final String KEY_IS_STAFF = "isStaff";
 
     private AccountSharedPreferences(Context context) {
         sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -69,6 +71,21 @@ public class AccountSharedPreferences {
 
     public void setLogin(boolean isLogin) {
         saveBoolean(KEY_IS_LOGIN, isLogin);
+    }
+    public boolean isAutoLogin() {
+        return sharedPreferences.getBoolean(KEY_AUTO_LOGIN, false);
+    }
+
+    public void setAutoLogin(boolean isAutoLogin) {
+        saveBoolean(KEY_AUTO_LOGIN, isAutoLogin);
+    }
+
+    public boolean isStaff() {
+        return sharedPreferences.getBoolean(KEY_IS_STAFF, false);
+    }
+
+    public void setStaff(boolean isLogin) {
+        saveBoolean(KEY_IS_STAFF, isLogin);
     }
 
     public boolean isBooking() {

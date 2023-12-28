@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.Tenant;
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.TenantMainActivity;
@@ -22,6 +24,7 @@ import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.Activity.Tenant.AboutUs_Part.ServicesAndFacilitiesActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.Start_Booking_Part.BookingRoomActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.Authentication_Part.LoginActivity;
+import com.hotel_booking_systems_android.service.AccountSharedPreferences;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -105,7 +108,6 @@ public class HomeFragment extends Fragment {
             edit.apply();
         }
         //login_btn content and function is depending by isLogin boolean value
-        Log.e("login","isLogin:" + sp.getBoolean("isLogin",false));
         if (sp.getBoolean("isLogin",false)){
             loginAndLogout_btn.setText("Logout");
             String username = sp.getString("username", "-");
@@ -125,6 +127,22 @@ public class HomeFragment extends Fragment {
         hotelDescription_btn = view.findViewById(R.id.home_hotelDescription_btn);
         servicesAndFacilities_btn = view.findViewById(R.id.home_servicesAndFacilities_btn);
         goEmployeePage_btn = view.findViewById(R.id.home_goEmployeePage_btn);
+
+        //set username
+        if(sp.getBoolean("isLogin",false)){
+            String username = AccountSharedPreferences.getInstance(getContext()).getUsername();
+            username_tv.setText(username);
+        }else{
+            username_tv.setText("-");
+        }
+
+        //set employee entry button background color
+        AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getContext());
+        if(!accSp.isStaff()){
+            goEmployeePage_btn.setBackground(ContextCompat.getDrawable(getActivity(),R.drawable.btn_disabled_shape));
+        }else{
+            startBooking_btn.setBackground(ContextCompat.getDrawable(getActivity(),R.drawable.btn_disabled_shape));
+        }
     }
 
     public void initializeEvent(){
@@ -141,6 +159,11 @@ public class HomeFragment extends Fragment {
 
         startBooking_btn.setOnClickListener(v ->{
             if (sp.getBoolean("isLogin",false)){
+                AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getContext());
+                if(accSp.isStaff()){
+                    Toast.makeText(getContext(), "Staff is not allowed to booking room...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent startBookingPage = new Intent(getActivity(), BookingRoomActivity.class);
                 startActivity(startBookingPage);
             }else {
@@ -159,17 +182,24 @@ public class HomeFragment extends Fragment {
         });
 
         goEmployeePage_btn.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), TenantMainActivity.class);
-            startActivity(intent);
+            AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getContext());
+            if(accSp.isStaff()){
+                Intent intent = new Intent(getActivity(), TenantMainActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(getActivity(), "You are not a Admin", Toast.LENGTH_SHORT).show();
+            }
         });
 
     }
 
     public void logoutProcess(){
+        AccountSharedPreferences accSp = AccountSharedPreferences.getInstance(getContext());
         username_tv.setText("-");
         SharedPreferences.Editor editor = sp.edit();
         editor.putBoolean("isLogin",false);
         editor.putBoolean("autoLogin",false);
+        editor.putBoolean("isStaff", false);
         editor.apply();
         initializeLoginState();//reload login state
     }

@@ -26,6 +26,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE username = :username")
     User findByUsername(String username);
 
+    @Query("SELECT * FROM user WHERE uid = :userId")
+    User getUserByUserId(Integer userId);
+
     @Insert
     void insertAll(User... users);
 

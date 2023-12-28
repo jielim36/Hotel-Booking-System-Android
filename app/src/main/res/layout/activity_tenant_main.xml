@@ -15,11 +15,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/return_icon"
+            android:id="@+id/tenant_returnHome_btn"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/arrow_back"/>
+            android:src="@drawable/arrow_back"
+            android:clickable="true"
+            />
 
         <LinearLayout
             android:layout_width="0dp"

@@ -23,10 +23,6 @@ public class ItemAdapter extends BaseAdapter {
         this.dataList = dataList;
     }
 
-//    public ItemAdapter(Context context) {//using default itemList
-//        this.context = context;
-//    }
-
     @Override
     public int getCount() {
         return dataList.size();

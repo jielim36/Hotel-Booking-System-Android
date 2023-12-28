@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.hotel_booking_systems_android.DB.manager.UserDBEngine;
 import com.hotel_booking_systems_android.bean.TenantRoom;
 
 import java.util.ArrayList;

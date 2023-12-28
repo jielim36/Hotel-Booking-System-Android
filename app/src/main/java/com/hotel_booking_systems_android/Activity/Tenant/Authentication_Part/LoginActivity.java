@@ -14,10 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hotel_booking_systems_android.DB.EmployeeDatabaseHelper;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.DB.User.User;
-import com.hotel_booking_systems_android.DB.manager.UserDBEngine;
+import com.hotel_booking_systems_android.DB.User.UserDBEngine;
+import com.hotel_booking_systems_android.bean.Employee;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -109,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
         staffLogin_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                staffLoginVerify();
             }
         });
         rememberMe_cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -160,4 +162,39 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivity(homeActivity);
     }
+
+    public void staffLoginVerify(){
+        if (username_et.getText() == null || password_et.getText() == null){
+            Toast.makeText(LoginActivity.this,"Login information can't be empty!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String username = username_et.getText().toString();
+        String password = password_et.getText().toString();
+
+        EmployeeDatabaseHelper employeeDatabaseHelper = new EmployeeDatabaseHelper(this);
+        Employee employee = employeeDatabaseHelper.authenticateEmployee(username, password);
+        if (employee == null){
+            Toast.makeText(LoginActivity.this , "Username or password is incorrect...",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //if login successfully, save account information into local if user selected the rememberMe or autoLogin checkbox
+        SharedPreferences.Editor editor = sp.edit();
+        if (rememberMe_cb.isChecked()){
+            editor.putInt("userId",employee.getEmpId());
+            editor.putString("username",employee.getUsername());
+            editor.putString("password",employee.getPassword());
+        }
+        //update checkbox state for next time login
+        editor.putBoolean("rememberMe",rememberMe_cb.isChecked());
+        editor.putBoolean("autoLogin",autoLogin_cb.isChecked());
+
+        editor.putBoolean("isStaff", true);
+        editor.putBoolean("isLogin",true);//save the login state
+        editor.apply();
+
+        startActivity(homeActivity);
+    }
+
 }
