@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="12sp"
-            android:hint="YYMMDD-XX-YY"
+            android:hint="YYMMDD-XX-YYYY"
             />
     </LinearLayout>
     <LinearLayout
