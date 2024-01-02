@@ -79,18 +79,18 @@ public class SearchActivity extends AppCompatActivity {
                 Intent intent = new Intent(SearchActivity.this, EditTenantActivity.class);
 
                 // 将租户详细信息作为附加信息传递给下一个活动
-                intent.putExtra("id", tenant.id);
-                intent.putExtra("Name", tenant.Name);
-                intent.putExtra("IC", tenant.IC);
-                intent.putExtra("ContactNumber", tenant.ContactNumber);
-                intent.putExtra("Gmail", tenant.Gmail);
-                intent.putExtra("RoomID", tenant.RoomID);
-                intent.putExtra("RoomType", tenant.RoomType);
-                intent.putExtra("RoomPrice", tenant.RoomPrice);
-                intent.putExtra("CheckingDate", tenant.CheckingDate);
-                intent.putExtra("CheckingTime", tenant.CheckingTime);
-                intent.putExtra("CheckoutDate", tenant.CheckoutDate);
-                intent.putExtra("CheckoutTime", tenant.CheckoutTime);
+                intent.putExtra("id", tenant.getId());
+                intent.putExtra("Name", tenant.getName());
+                intent.putExtra("IC", tenant.getIC());
+                intent.putExtra("ContactNumber", tenant.getContactNumber());
+                intent.putExtra("Gmail", tenant.getGmail());
+                intent.putExtra("RoomID", tenant.getRoomID());
+                intent.putExtra("RoomType", tenant.getRoomType());
+                intent.putExtra("RoomPrice", tenant.getRoomPrice());
+                intent.putExtra("CheckingDate", tenant.getCheckingDate());
+                intent.putExtra("CheckingTime", tenant.getCheckingTime());
+                intent.putExtra("CheckoutDate", tenant.getCheckoutDate());
+                intent.putExtra("CheckoutTime", tenant.getCheckoutTime());
 
                 startActivity(intent);
             }
