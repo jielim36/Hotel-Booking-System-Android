@@ -2,7 +2,6 @@ package com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hotel_booking_systems_android.Activity.Employee.Room.Room;
 import com.hotel_booking_systems_android.Activity.Employee.Room.RoomStatus;
 import com.hotel_booking_systems_android.DB.ItemDatabaseHelper;
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
@@ -22,10 +20,8 @@ import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.bean.Item;
 import com.hotel_booking_systems_android.bean.TenantRoom;
-import com.hotel_booking_systems_android.custom.ItemAdapter;
 import com.hotel_booking_systems_android.service.AccountSharedPreferences;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity {

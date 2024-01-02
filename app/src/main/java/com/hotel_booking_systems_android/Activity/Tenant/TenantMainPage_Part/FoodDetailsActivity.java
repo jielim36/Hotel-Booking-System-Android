@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.hotel_booking_systems_android.DB.ItemDatabaseHelper;
 import com.hotel_booking_systems_android.R;
@@ -28,6 +29,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
     TextView foodQuantity;
     ImageButton increaseQty_btn;
     ImageButton decreaseQty_btn;
+    ImageView food_img;
     Button order_btn;
     Food food;
     int foodId;
@@ -52,6 +54,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         increaseQty_btn = findViewById(R.id.food_details_increase_quantity_btn);
         decreaseQty_btn = findViewById(R.id.food_details_decrease_quantity_btn);
         order_btn = findViewById(R.id.food_details_order_btn);
+        food_img = findViewById(R.id.food_img);
 
         //initialize value
         foodId = getIntent().getIntExtra("foodId", -1);
@@ -65,6 +68,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         foodPrice.setText("Price: "+String.valueOf(food.getPrice()));
         foodDescription.setText(food.getDescription());
         foodQuantity.setText("1");//default = 1
+        food_img.setBackground(ContextCompat.getDrawable(this, food.getImg()));
 
     }
 

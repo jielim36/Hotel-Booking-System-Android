@@ -18,6 +18,7 @@ import com.hotel_booking_systems_android.Activity.Employee.Room.RoomListActivity
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.AddTenant.AddTenantActivity;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.bean.Tenant;
 
 import java.util.ArrayList;
 

@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.hotel_booking_systems_android.Activity.Employee.Room.Room;
+import com.hotel_booking_systems_android.bean.Room;
 import com.hotel_booking_systems_android.Activity.Employee.Room.RoomStatus;
 import com.hotel_booking_systems_android.DB.ItemDatabaseHelper;
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;

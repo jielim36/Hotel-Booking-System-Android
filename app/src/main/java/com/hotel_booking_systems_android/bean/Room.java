@@ -1,18 +1,19 @@
-package com.hotel_booking_systems_android.Activity.Employee.Room;
+package com.hotel_booking_systems_android.bean;
 
 
+import com.hotel_booking_systems_android.Activity.Employee.Room.RoomStatus;
 import com.hotel_booking_systems_android.R;
 
 public class Room {
-        String room_no;
-        String price;
-        String type;
-        String floor_no;
-        String max_people;
-        String describe;
+        private String room_no;
+        private String price;
+        private String type;
+        private String floor_no;
+        private String max_people;
+        private String describe;
         //    String title;
-        RoomStatus status;
-        int images;
+        private RoomStatus status;
+        private int images;
 
 
         public Room() {

@@ -1,18 +1,18 @@
-package com.hotel_booking_systems_android.Activity.Employee.Tenant;
+package com.hotel_booking_systems_android.bean;
 
 public class Tenant {
-     String id;
-     String Name;
-     String IC;
-     String ContactNumber;
-     String Gmail;
-     String RoomID;
-     String RoomType;
-     String RoomPrice;
-     String CheckingDate;
-     String CheckingTime;
-     String CheckoutDate;
-     String CheckoutTime;
+    private String id;
+    private String Name;
+    private String IC;
+    private String ContactNumber;
+    private String Gmail;
+    private String RoomID;
+    private String RoomType;
+    private String RoomPrice;
+    private String CheckingDate;
+    private String CheckingTime;
+    private String CheckoutDate;
+    private String CheckoutTime;
 
      String titles;
 

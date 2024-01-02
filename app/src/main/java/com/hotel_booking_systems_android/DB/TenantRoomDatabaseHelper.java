@@ -1,5 +1,6 @@
 package com.hotel_booking_systems_android.DB;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -84,7 +85,7 @@ public class TenantRoomDatabaseHelper extends SQLiteOpenHelper {
         );
         db.close();
     }
-
+    @SuppressLint("Range")
     public List<TenantRoom> getTenantRoomsByUserIdAndStatus(int userId, TenantRoom.Status status) {
         List<TenantRoom> tenantRoomList = new ArrayList<>();
         String SELECT_QUERY = "SELECT * FROM " + TABLE_NAME +

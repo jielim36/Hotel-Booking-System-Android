@@ -1,5 +1,6 @@
 package com.hotel_booking_systems_android.DB;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -35,11 +36,11 @@ public class ItemDatabaseHelper extends SQLiteOpenHelper {
         String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_USER_ID + " INTEGER DEFAULT 0,"
-                + COLUMN_ITEM_NAME + " TEXT,"
-                + COLUMN_ITEM_PRICE + " REAL,"
-                + COLUMN_QUANTITY + " INTEGER,"
-                + COLUMN_TOTAL_AMOUNT + " REAL,"
-                + COLUMN_STATUS + " TEXT)"; // Add the new column
+                + COLUMN_ITEM_NAME + " TEXT NOT NULL,"
+                + COLUMN_ITEM_PRICE + " REAL NOT NULL,"
+                + COLUMN_QUANTITY + " INTEGER NOT NULL,"
+                + COLUMN_TOTAL_AMOUNT + " REAL NOT NULL,"
+                + COLUMN_STATUS + " TEXT NOT NULL)"; // Add the new column
         db.execSQL(CREATE_TABLE);
     }
 
@@ -79,7 +80,7 @@ public class ItemDatabaseHelper extends SQLiteOpenHelper {
         db.update(TABLE_NAME, values, COLUMN_ID + "=?", new String[]{String.valueOf(item.getId())});
         db.close();
     }
-
+    @SuppressLint("Range")
     public List<Item> getUnpaidItemByUserId(int userId) {
         List<Item> itemList = new ArrayList<>();
         String SELECT_QUERY = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_USER_ID + " = ? AND " + COLUMN_STATUS + " = ?";
@@ -123,7 +124,7 @@ public class ItemDatabaseHelper extends SQLiteOpenHelper {
         }
         db.close();
     }
-
+    @SuppressLint("Range")
     public List<Item> getItemsByUserId(int userId) {
         List<Item> itemList = new ArrayList<>();
         String SELECT_QUERY = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_USER_ID + " = ?";

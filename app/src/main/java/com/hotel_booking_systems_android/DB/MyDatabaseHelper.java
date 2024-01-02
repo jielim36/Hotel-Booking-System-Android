@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
-import com.hotel_booking_systems_android.Activity.Employee.Room.Room;
+import com.hotel_booking_systems_android.bean.Room;
 import com.hotel_booking_systems_android.Activity.Employee.Room.RoomStatus;
-import com.hotel_booking_systems_android.Activity.Employee.Tenant.Tenant;
+import com.hotel_booking_systems_android.bean.Tenant;
 import java.util.ArrayList;
 import java.util.List;
 

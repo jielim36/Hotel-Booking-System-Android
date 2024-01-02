@@ -1,6 +1,7 @@
 package com.hotel_booking_systems_android.DB;
 
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -52,7 +53,7 @@ public class FeedbackDatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
-
+    @SuppressLint("Range")
     public List<Feedback> getAllFeedbacks() {
         List<Feedback> feedbackList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

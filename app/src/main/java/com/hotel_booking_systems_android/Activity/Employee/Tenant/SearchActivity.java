@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.bean.Tenant;
 
 import java.util.ArrayList;
 import java.util.List;

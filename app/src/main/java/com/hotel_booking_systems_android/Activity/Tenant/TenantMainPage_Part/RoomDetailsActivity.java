@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hotel_booking_systems_android.Activity.Employee.Room.Room;
+import com.hotel_booking_systems_android.bean.Room;
 import com.hotel_booking_systems_android.DB.ItemDatabaseHelper;
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
 import com.hotel_booking_systems_android.DB.TenantRoomDatabaseHelper;

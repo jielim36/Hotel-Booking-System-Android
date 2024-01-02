@@ -5,8 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import androidx.core.content.ContextCompat;
 
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.bean.Food;
@@ -48,6 +51,7 @@ public class FoodAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.template_food_list, parent, false);
         }
 
+        ImageView foodImg = convertView.findViewById(R.id.food_list_img);
         TextView itemName = convertView.findViewById(R.id.food_list_name);
         TextView itemDesc = convertView.findViewById(R.id.food_list_description);
         TextView itemPrice = convertView.findViewById(R.id.food_list_price);
@@ -55,6 +59,7 @@ public class FoodAdapter extends BaseAdapter {
         itemName.setText(dataList.get(position).getName());
         itemDesc.setText(dataList.get(position).getDescription());
         itemPrice.setText("Price: "+String.valueOf(dataList.get(position).getPrice()));
+        foodImg.setBackground(ContextCompat.getDrawable(context, dataList.get(position).getImg()));
 
         return convertView;
     }

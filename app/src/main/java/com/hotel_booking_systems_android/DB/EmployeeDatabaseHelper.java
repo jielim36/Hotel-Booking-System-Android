@@ -1,5 +1,6 @@
 package com.hotel_booking_systems_android.DB;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -58,7 +59,7 @@ public class EmployeeDatabaseHelper extends SQLiteOpenHelper {
 
         db.insert(TABLE_NAME, null, values);
     }
-
+    @SuppressLint("Range")
     public Employee authenticateEmployee(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Employee authenticatedEmployee = null;

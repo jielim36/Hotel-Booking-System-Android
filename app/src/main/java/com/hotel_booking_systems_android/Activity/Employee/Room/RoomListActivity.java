@@ -21,6 +21,7 @@ import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
 import com.hotel_booking_systems_android.Activity.Employee.Room.AddRoom.AddRoomStep1Activity;
 import com.hotel_booking_systems_android.Activity.Employee.Tenant.TenantMainActivity;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.bean.Room;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -217,13 +218,13 @@ public class RoomListActivity extends AppCompatActivity {
             do {
                 // new a room and set the attribute
                 Room room = new Room();
-                room.room_no = c.getString(room_no);
-                room.price = c.getString(price);
-                room.type = c.getString(type);
-                room.floor_no = c.getString(floor_no);
-                room.max_people = c.getString(max_people);
-                room.describe = c.getString(descibe);
-                room.status = RoomStatus.valueOf(c.getString(status));
+                room.setRoom_no(c.getString(room_no));
+                room.setPrice(c.getString(price));
+                room.setType(c.getString(type));
+                room.setFloor_no(c.getString(floor_no));
+                room.setMax_people(c.getString(max_people));
+                room.setDescribe(c.getString(descibe));
+                room.setStatus(RoomStatus.valueOf(c.getString(status)));
 //                room.images =
 
                 // add into rooms vector
@@ -266,13 +267,13 @@ public class RoomListActivity extends AppCompatActivity {
             do {
                 // new a room and set the attribute
                 Room room = new Room();
-                room.room_no = c.getString(room_no);
-                room.price = c.getString(price);
-                room.type = c.getString(type);
-                room.floor_no = c.getString(floor_no);
-                room.max_people = c.getString(max_people);
-                room.describe = c.getString(descibe);
-                room.status = RoomStatus.valueOf(c.getString(status));
+                room.setRoom_no(c.getString(room_no));
+                room.setPrice(c.getString(price));
+                room.setType(c.getString(type));
+                room.setFloor_no(c.getString(floor_no));
+                room.setMax_people(c.getString(max_people));
+                room.setDescribe(c.getString(descibe));
+                room.setStatus(RoomStatus.valueOf(c.getString(status)));
 //                room.images =
 
                 // add into rooms vector
@@ -311,13 +312,13 @@ public class RoomListActivity extends AppCompatActivity {
             do {
                 // new a room and set the attribute
                 Room room = new Room();
-                room.room_no = c.getString(room_no);
-                room.price = c.getString(price);
-                room.type = c.getString(type);
-                room.floor_no = c.getString(floor_no);
-                room.max_people = c.getString(max_people);
-                room.describe = c.getString(descibe);
-                room.status = RoomStatus.valueOf(c.getString(status));
+                room.setRoom_no(c.getString(room_no));
+                room.setPrice(c.getString(price));
+                room.setType(c.getString(type));
+                room.setFloor_no(c.getString(floor_no));
+                room.setMax_people(c.getString(max_people));
+                room.setDescribe(c.getString(descibe));
+                room.setStatus(RoomStatus.valueOf(c.getString(status)));
 //                room.images =
 
                 // add into rooms vector

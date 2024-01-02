@@ -9,7 +9,6 @@ public class User {
 
     @PrimaryKey(autoGenerate = true)//autoincrement=true
     private int uid;
-
     private String username;
     private String password;
     private String ic;

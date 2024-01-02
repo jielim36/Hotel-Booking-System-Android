@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.hotel_booking_systems_android.DB.MyDatabaseHelper;
 import com.hotel_booking_systems_android.R;
+import com.hotel_booking_systems_android.bean.Tenant;
 
 import java.util.ArrayList;
 
@@ -54,18 +55,18 @@ public class HistoryTenantActivity extends AppCompatActivity {
                 Tenant tenant = tenants.get(position);
                 Intent intent = new Intent(HistoryTenantActivity.this, HistoryTenantDetailActivity.class);
 
-                intent.putExtra("id",tenant.id);
-                intent.putExtra("Name", tenant.Name);
-                intent.putExtra("IC", tenant.IC);
-                intent.putExtra("ContactNumber", tenant.ContactNumber);
-                intent.putExtra("Gmail", tenant.Gmail);
-                intent.putExtra("RoomID", tenant.RoomID);
-                intent.putExtra("RoomType", tenant.RoomType);
-                intent.putExtra("RoomPrice", tenant.RoomPrice);
-                intent.putExtra("CheckingDate", tenant.CheckingDate);
-                intent.putExtra("CheckingTime", tenant.CheckingTime);
-                intent.putExtra("CheckoutDate", tenant.CheckoutDate);
-                intent.putExtra("CheckoutTime", tenant.CheckoutTime);
+                intent.putExtra("id",tenant.getId());
+                intent.putExtra("Name", tenant.getName());
+                intent.putExtra("IC", tenant.getIC());
+                intent.putExtra("ContactNumber", tenant.getContactNumber());
+                intent.putExtra("Gmail", tenant.getGmail());
+                intent.putExtra("RoomID", tenant.getRoomID());
+                intent.putExtra("RoomType", tenant.getRoomType());
+                intent.putExtra("RoomPrice", tenant.getRoomPrice());
+                intent.putExtra("CheckingDate", tenant.getCheckingDate());
+                intent.putExtra("CheckingTime", tenant.getCheckingTime());
+                intent.putExtra("CheckoutDate", tenant.getCheckoutDate());
+                intent.putExtra("CheckoutTime", tenant.getCheckoutTime());
 
                 startActivity(intent);
             }
@@ -96,18 +97,18 @@ public class HistoryTenantActivity extends AppCompatActivity {
             do {
                 // 创建一个 Tenant 对象并用游标中的数据填充它
                 Tenant tenant = new Tenant();
-                tenant.id = cursor.getString(id);
-                tenant.Name = cursor.getString(Name);
-                tenant.IC = cursor.getString(IC);
-                tenant.ContactNumber = cursor.getString(ContactNumber);
-                tenant.Gmail = cursor.getString(Gmail);
-                tenant.RoomID = cursor.getString(RoomID);
-                tenant.RoomType = cursor.getString(RoomType);
-                tenant.RoomPrice = cursor.getString(RoomPrice);
-                tenant.CheckingDate = cursor.getString(CheckingDate);
-                tenant.CheckingTime = cursor.getString(CheckingTime);
-                tenant.CheckoutDate = cursor.getString(CheckoutDate);
-                tenant.CheckoutTime = cursor.getString(CheckoutTime);
+                tenant.setId(cursor.getString(id));
+                tenant.setName(cursor.getString(Name));
+                tenant.setIC(cursor.getString(IC));
+                tenant.setContactNumber(cursor.getString(ContactNumber));
+                tenant.setGmail(cursor.getString(Gmail));
+                tenant.setRoomID(cursor.getString(RoomID));
+                tenant.setRoomType(cursor.getString(RoomType));
+                tenant.setRoomPrice(cursor.getString(RoomPrice));
+                tenant.setCheckingDate(cursor.getString(CheckingDate));
+                tenant.setCheckingTime(cursor.getString(CheckingTime));
+                tenant.setCheckoutDate(cursor.getString(CheckoutDate));
+                tenant.setCheckoutTime(cursor.getString(CheckoutTime));
 
                 tenants.add(tenant);
 

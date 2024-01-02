@@ -1,5 +1,7 @@
 package com.hotel_booking_systems_android.bean;
 
+import com.hotel_booking_systems_android.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,31 +10,30 @@ public class Food {
     private int id;
     private String name;
     private String description;
-    private String imagePath;
     private double price;
+    private int img;
 
     private static final List<Food> foodList = new ArrayList<>();
 
     // 初始化数据
     static {
-        foodList.add(new Food(1, "Chicken Rice", "This is a Chicken Rice", "xx", 15));
-        foodList.add(new Food(2, "Pizza", "This is a Pizza", "xx", 30));
-        foodList.add(new Food(3, "Sushi", "This is a Sushi", "xx", 20));
+        foodList.add(new Food(1, "Chicken Rice", "This is a Chicken Rice" , 15, R.drawable.food_chicken_rice));
+        foodList.add(new Food(2, "Pizza", "This is a Pizza", 30, R.drawable.food_pizza));
+        foodList.add(new Food(3, "Sushi", "This is a Sushi", 20, R.drawable.food_sushi));
     }
 
-    public Food(int id, String name, String imagePath, double price) {
+    public Food(int id, String name, double price) {
         this.id = id;
         this.name = name;
-        this.imagePath = imagePath;
         this.price = price;
     }
 
-    public Food(int id, String name, String description, String imagePath, double price) {
+    public Food(int id, String name, String description, double price, int img) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.imagePath = imagePath;
         this.price = price;
+        this.img = img;
     }
 
     public static List<Food> getFoodListInstance() {
@@ -63,19 +64,19 @@ public class Food {
         this.name = name;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
     public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }
