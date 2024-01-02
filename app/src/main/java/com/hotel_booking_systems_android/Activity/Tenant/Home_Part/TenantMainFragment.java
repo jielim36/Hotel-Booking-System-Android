@@ -15,11 +15,15 @@ import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.Cal
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.ExtendStayActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.OrderFoodActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.RoomDetailsActivity;
+import com.hotel_booking_systems_android.DB.TenantRoomDatabaseHelper;
 import com.hotel_booking_systems_android.MainActivity;
 import com.hotel_booking_systems_android.R;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.CheckoutActivity;
 import com.hotel_booking_systems_android.Activity.Tenant.TenantMainPage_Part.FeedbackActivity;
+import com.hotel_booking_systems_android.bean.TenantRoom;
 import com.hotel_booking_systems_android.service.AccountSharedPreferences;
+
+import java.util.List;
 
 public class TenantMainFragment extends Fragment {
 
@@ -38,11 +42,18 @@ public class TenantMainFragment extends Fragment {
         initializeEvent();
 
         boolean isBooking = AccountSharedPreferences.getInstance(getContext()).isBooking();
-        if(!isBooking){
+        boolean isStaff = AccountSharedPreferences.getInstance(getContext()).isStaff();
+        if(isStaff){
+            Toast.makeText(getContext(), "Employee is not allowed to access Tenant Main Page...", Toast.LENGTH_SHORT).show();
+            if (getActivity() instanceof MainActivity) {
+                // 切换到 Fragment A
+                ((MainActivity) getActivity()).replaceFragment(new HomeFragment());
+            }
+        }else if(!isBooking){
             Toast.makeText(getContext(), "You are no booking any room, back to home...", Toast.LENGTH_SHORT).show();
             if (getActivity() instanceof MainActivity) {
                 // 切换到 Fragment A
-                ((MainActivity) getActivity()).replaceFragment(new TenantMainFragment());
+                ((MainActivity) getActivity()).replaceFragment(new HomeFragment());
             }
         }
         

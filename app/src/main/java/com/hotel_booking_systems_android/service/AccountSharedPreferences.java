@@ -1,6 +1,12 @@
 package com.hotel_booking_systems_android.service;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.hotel_booking_systems_android.DB.TenantRoomDatabaseHelper;
+import com.hotel_booking_systems_android.bean.TenantRoom;
+
+import java.util.List;
 
 public class AccountSharedPreferences {
 
@@ -14,9 +20,11 @@ public class AccountSharedPreferences {
     private final String KEY_USERNAME = "username";
     private final String KEY_USERID = "userId";
     private final String KEY_IS_STAFF = "isStaff";
+    private final Context context;
 
     private AccountSharedPreferences(Context context) {
         sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+        this.context = context;
     }
 
     public static synchronized AccountSharedPreferences getInstance(Context context) {
@@ -89,7 +97,13 @@ public class AccountSharedPreferences {
     }
 
     public boolean isBooking() {
-        return sharedPreferences.getBoolean(KEY_IS_BOOKING, false);
+//        return sharedPreferences.getBoolean(KEY_IS_BOOKING, false);
+        TenantRoomDatabaseHelper tenantRoomDatabaseHelper = new TenantRoomDatabaseHelper(context);
+        List<TenantRoom> bookedRoomByUser = tenantRoomDatabaseHelper.getTenantRoomsByUserIdAndStatus(getUserId(), TenantRoom.Status.CHECKED_IN);
+        for(TenantRoom tenantRoom : bookedRoomByUser){
+            Log.e("Book", ""+tenantRoom.getRoomId());
+        }
+        return !bookedRoomByUser.isEmpty();
     }
 
     public void setBooking(boolean isBooking) {
